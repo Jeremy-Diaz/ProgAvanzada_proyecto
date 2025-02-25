@@ -22,8 +22,12 @@ public class Row {
     public void setData(List<Double> datos) {
         this.datos = datos;
     }
+    public void setDataAt (int i, double dato){
+        datos.set(i,dato);
+    }
     public void addData (double dato){
         datos.add(dato);
     }
+
 
 }

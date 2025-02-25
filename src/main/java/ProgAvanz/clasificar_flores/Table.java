@@ -41,6 +41,11 @@ public class Table {
     public void addHeaders(List<String> headers){
         this.headers.addAll(headers);
     }
+    public void addHeaders(String[] headers){
+        for (String header: headers){
+            this.headers.add(header);
+        }
+    }
 
     public void addRow(Row fila){
         filas.add(fila);
