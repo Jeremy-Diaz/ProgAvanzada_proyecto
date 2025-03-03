@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="Falta implementar CSV y terminar ROW">
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="antes de las pruebas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/miles_dollars.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/RowWithLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/RowWithLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/TableWithLabels.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
-    <list id="65c101a0-90d3-4dae-885d-7ba96f05df82" name="Changes by ikerf" comment="" />
+    <list id="1bb7968f-401b-413e-90bf-cc0a71f4b4bd" name="Changes by ikerf" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Table.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +46,14 @@
     "accountId": "a5f87f32-315e-4f49-930f-63cd99ee9be4"
   }
 }]]></component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java">
+      <ranges>
+        <range start1="34" end1="35" start2="34" end2="39" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
+        <range start1="43" end1="44" start2="47" end2="48" changelist="1bb7968f-401b-413e-90bf-cc0a71f4b4bd" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -49,6 +65,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.CSVTest.executor": "Run",
+    "JUnit.TableTest.executor": "Run",
+    "JUnit.TableWithLabelsTest.executor": "Run",
+    "JUnit.TableWithLabelsTest.getLabelAsInteger.executor": "Run",
+    "JUnit.TableWithLabelsTest.getRowAt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -57,7 +78,90 @@
     "onboarding.tips.debug.path": "/home/al438643/IdeaProjects/ProgAvanzada/src/main/java/ProgAvanz/Main.java"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\resources" />
+      <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\java\ProgAvanz" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CSVTest">
+    <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificar_flores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.CSVTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificar_flores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.TableTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableWithLabelsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificar_flores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.TableWithLabelsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableWithLabelsTest.getLabelAsInteger" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificar_flores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.TableWithLabelsTest" />
+      <option name="METHOD_NAME" value="getLabelAsInteger" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TableWithLabelsTest.getRowAt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificar_flores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.TableWithLabelsTest" />
+      <option name="METHOD_NAME" value="getRowAt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -67,6 +171,15 @@
       <option name="filePath" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TableWithLabelsTest" />
+        <item itemvalue="JUnit.TableTest" />
+        <item itemvalue="JUnit.CSVTest" />
+        <item itemvalue="JUnit.TableWithLabelsTest.getLabelAsInteger" />
+        <item itemvalue="JUnit.TableWithLabelsTest.getRowAt" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -85,12 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1739878053271</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="antes de las pruebas">
+      <option name="closed" value="true" />
+      <created>1741000641075</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741000641075</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Falta implementar CSV y terminar ROW" />
-    <option name="LAST_COMMIT_MESSAGE" value="Falta implementar CSV y terminar ROW" />
+    <MESSAGE value="antes de las pruebas" />
+    <option name="LAST_COMMIT_MESSAGE" value="antes de las pruebas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -99,6 +221,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/TableWithLabelsTest.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

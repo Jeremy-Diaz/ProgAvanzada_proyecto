@@ -32,7 +32,11 @@ public class CSV {
         TableWithLabels tabla = new TableWithLabels();
         String linea = sc.nextLine();
         String[] headers = linea.split(",");
-        tabla.addHeaders(headers);
+        for (int i = 0; i < headers.length-1; i++ ){
+            tabla.addHeader(headers[i]);
+        }
+
+
 
         while(sc.hasNextLine()){
             RowWithLabel fila = new RowWithLabel();

@@ -12,10 +12,13 @@ public class Row {
     public Row(){
         datos = new LinkedList<>();
     }
+    public Row(List<Double> data){
+        datos = data;
+    }
 
     // metodos
 
-    public List<Double> getDatos(){
+    public List<Double> getData(){
         return datos;
     }
 
