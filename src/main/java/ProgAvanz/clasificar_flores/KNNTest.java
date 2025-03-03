@@ -2,19 +2,19 @@
 package ProgAvanz.clasificar_flores;
 
 // TODO: Reemplazar por los imports de tu proyecto
-import ProgAvanz.clasificar_flores.CSV;
-import ProgAvanz.clasificar_flores.TableWithLabels;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.Assert.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Stream;
+
+import static org.junit.Assert.assertEquals;
 
 class KNNTest {
 
