@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="Hay que arreglar el row with label">
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="creo que va">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/tests/tests/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNNTest.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
-    <list id="1bb7968f-401b-413e-90bf-cc0a71f4b4bd" name="Changes by ikerf" comment="Changes by iker">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" afterDir="false" />
-    </list>
+    <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,16 +40,6 @@
     &quot;accountId&quot;: &quot;a5f87f32-315e-4f49-930f-63cd99ee9be4&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java">
-      <ranges>
-        <range start1="11" end1="16" start2="11" end2="19" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="18" end1="19" start2="21" end2="23" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="20" end1="22" start2="24" end2="30" changelist="1bb7968f-401b-413e-90bf-cc0a71f4b4bd" />
-        <range start1="24" end1="26" start2="32" end2="34" changelist="1bb7968f-401b-413e-90bf-cc0a71f4b4bd" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -63,6 +52,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.CSVTest.executor": "Run",
+    "JUnit.KNNTest.estimate.executor": "Run",
+    "JUnit.KNNTest.executor": "Run",
     "JUnit.TableTest.executor": "Run",
     "JUnit.TableWithLabelsTest.executor": "Run",
     "JUnit.TableWithLabelsTest.getLabelAsInteger.executor": "Run",
@@ -82,7 +73,7 @@
       <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\java\ProgAvanz" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CSVTest">
+  <component name="RunManager" selected="JUnit.KNNTest.estimate">
     <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
@@ -98,7 +89,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
         <pattern>
@@ -107,8 +98,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
-      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.TableTest" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.KNNTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KNNTest.estimate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificar_flores.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.KNNTest" />
+      <option name="METHOD_NAME" value="estimate(java.util.List,java.lang.Integer)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -144,22 +151,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TableWithLabelsTest.getRowAt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvanzada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ProgAvanz.clasificar_flores.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
-      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificar_flores.TableWithLabelsTest" />
-      <option name="METHOD_NAME" value="getRowAt" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.KNNTest.estimate" />
+        <item itemvalue="JUnit.KNNTest" />
         <item itemvalue="JUnit.CSVTest" />
         <item itemvalue="JUnit.TableWithLabelsTest" />
         <item itemvalue="JUnit.TableWithLabelsTest.getLabelAsInteger" />
-        <item itemvalue="JUnit.TableTest" />
-        <item itemvalue="JUnit.TableWithLabelsTest.getRowAt" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741009319587</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="creo que va">
+      <option name="closed" value="true" />
+      <created>1741021123390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741021123391</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -228,7 +227,8 @@
     <MESSAGE value="antes de las pruebas" />
     <MESSAGE value="Hay que arreglar el row with label" />
     <MESSAGE value="Changes by iker" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by iker" />
+    <MESSAGE value="creo que va" />
+    <option name="LAST_COMMIT_MESSAGE" value="creo que va" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -9,12 +9,13 @@ public class KNN {
         tabla = data;
     }
     public Integer estimate(List<Double> sample) {
+
         int fila_distancia_minima = 0;
         double distancia_minima = getDistancia(tabla.getRows().get(0).getData(),sample) ;
         for(int i = 1; i < tabla.getRows().size(); i++){
             RowWithLabel fila = (RowWithLabel) tabla.getRows().get(i);
             double distancia = getDistancia(fila.getData(),sample);
-            if (distancia < fila_distancia_minima) {
+            if (distancia < distancia_minima) {
                 fila_distancia_minima = i;
                 distancia_minima = distancia;
             }

@@ -32,11 +32,8 @@ public class CSV {
         TableWithLabels tabla = new TableWithLabels();
         String linea = sc.nextLine();
         String[] headers = linea.split(",");
-        for (int i = 0; i < headers.length-1; i++ ){
+        for (int i = 0; i < headers.length-1; i++ )
             tabla.addHeader(headers[i]);
-        }
-
-
 
         while(sc.hasNextLine()){
             RowWithLabel fila = new RowWithLabel();
@@ -44,9 +41,7 @@ public class CSV {
             String[] datos = linea.split(",");
             String etiqueta = datos[datos.length-1];
             fila.setLabel(etiqueta);
-            if(!tabla.containsLabel(etiqueta))
-                tabla.getLabelAsInteger(etiqueta);
-
+            if(!tabla.containsLabel(etiqueta)) {tabla.getLabelAsInteger(etiqueta);}
             for(int i = 0; i < datos.length -1 ; i++){
                 double numero = Double.parseDouble(datos[i]);
                 fila.addData(numero);
