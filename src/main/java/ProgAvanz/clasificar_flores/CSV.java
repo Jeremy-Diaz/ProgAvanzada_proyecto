@@ -45,7 +45,7 @@ public class CSV {
             String etiqueta = datos[datos.length-1];
             fila.setLabel(etiqueta);
             if(!tabla.containsLabel(etiqueta))
-                tabla.addLabel(etiqueta);
+                tabla.getLabelAsInteger(etiqueta);
 
             for(int i = 0; i < datos.length -1 ; i++){
                 double numero = Double.parseDouble(datos[i]);

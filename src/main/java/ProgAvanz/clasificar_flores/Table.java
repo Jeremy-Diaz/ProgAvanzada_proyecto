@@ -25,12 +25,14 @@ public class Table {
     }
     public Row getRowAt(int num_fila){
         return filas.get(num_fila);
-
     }
-    public List<Double> getColumAt(int num_atributo){
+    public int getRowCount(){
+        return filas.size();
+    }
+    public List<Double> getColumnAt(int num_atributo){
         List<Double> datos_columna = new LinkedList<>();
         for(Row fila: filas) {
-            datos_columna.add(fila.getDatos().get(num_atributo));
+            datos_columna.add(fila.getData().get(num_atributo));
         }
         return datos_columna;
     }
@@ -47,6 +49,9 @@ public class Table {
         }
     }
 
+    public void addHeader(String header){
+        headers.add(header);
+    }
     public void addRow(Row fila){
         filas.add(fila);
     }
