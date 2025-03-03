@@ -9,7 +9,6 @@ public class CSV {
     public Table readTable(String nombre) throws FileNotFoundException{
         String ref = getClass().getClassLoader().getResource(nombre).getFile();
         Scanner sc = new Scanner(new File(ref));
-
         Table tabla = new Table();
         String linea = sc.nextLine();
         String[] headers = linea.split(",");
@@ -34,11 +33,16 @@ public class CSV {
         String linea = sc.nextLine();
         String[] headers = linea.split(",");
         tabla.addHeaders(headers);
+
         while(sc.hasNextLine()){
             RowWithLabel fila = new RowWithLabel();
             linea = sc.nextLine();
             String[] datos = linea.split(",");
-            fila.setLabel(datos[datos.length - 1]);
+            String etiqueta = datos[datos.length-1];
+            fila.setLabel(etiqueta);
+            if(!tabla.containsLabel(etiqueta))
+                tabla.addLabel(etiqueta);
+
             for(int i = 0; i < datos.length -1 ; i++){
                 double numero = Double.parseDouble(datos[i]);
                 fila.addData(numero);

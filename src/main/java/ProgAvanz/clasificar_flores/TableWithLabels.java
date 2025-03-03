@@ -1,30 +1,34 @@
 package ProgAvanz.clasificar_flores;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-public class TableWithLabels extends Table{
+import java.util.Map;
 
-    List<RowWithLabel> filasConEtiquetas;
-    public TableWithLabels(){
+public class TableWithLabels extends Table {
+
+    // atributos
+    private Map<String, Integer> labelsToIndex;
+
+    // contructores
+    public TableWithLabels() {
         super();
-        filasConEtiquetas = new LinkedList<>();
+        labelsToIndex = new HashMap<>();
+    }
+
+    // metodos
+    public void addLabel(String etiqueta) {
+        if(!labelsToIndex.containsKey(etiqueta)){
+            labelsToIndex.put(toString(),labelsToIndex.size());
+        }
+    }
+    public boolean containsLabel( String etiqueta){
+        return labelsToIndex.containsKey(etiqueta);
+    }
+    public int getLabelAsInteger(String etiqueta) {
+        return labelsToIndex.get(etiqueta);
     }
     @Override
-    public RowWithLabel getRowAt( int i){
-        return filasConEtiquetas.get(i);
-    }
-
-    public List<RowWithLabel> getRowsWithLabels() {
-        return filasConEtiquetas;
-    }
-
-    public List<Double> getColumAt(int num_atributo){
-        List<Double> datos_columna = new LinkedList<>();
-        for(RowWithLabel fila: filasConEtiquetas) {
-            datos_columna.add(fila.getDatos().get(num_atributo));
-        }
-        return datos_columna;
-    }
-    public void addRow(RowWithLabel fila) {
-        filasConEtiquetas.add(fila);
+    public RowWithLabel getRowAt(int i) {
+        return (RowWithLabel) super.getRowAt(i);
     }
 }
