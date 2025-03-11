@@ -23,14 +23,14 @@ public class KNN {
         RowWithLabel fila = (RowWithLabel) tabla.getRows().get(fila_distancia_minima);
         return tabla.getLabelAsInteger(fila.getLabel());
     }
-    private double getDistancia(List<Double> origen, List<Double> sample){
+    public static double getDistancia(List<Double> origen, List<Double> sample){
         double sumatorio = 0;
         for (int i = 0; i < origen.size(); i++){
-            sumatorio += getDistanciaAux(origen.get(i), sample.get(i));
+            sumatorio += KNN.getDistanciaAux(origen.get(i), sample.get(i));
         }
         return Math.sqrt(sumatorio);
     }
-    private double getDistanciaAux(double dato1, double dato2){
+    public static double getDistanciaAux(double dato1, double dato2){
         return Math.pow(dato1 - dato2, 2);
     }
 }

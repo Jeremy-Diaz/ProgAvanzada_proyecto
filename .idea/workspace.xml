@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="creo que va">
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="Previamente esta bien">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Algorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/AlgoritmoSinEntrenarException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KMeans.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/__MACOSX/._tests" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/__MACOSX/._tests" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/__MACOSX/tests/._.DS_Store" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/__MACOSX/tests/._.DS_Store" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/__MACOSX/tests/._CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/__MACOSX/tests/._CSVTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/__MACOSX/tests/._KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/__MACOSX/tests/._KNNTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/__MACOSX/tests/._TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/__MACOSX/tests/._TableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/__MACOSX/tests/._TableWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/__MACOSX/tests/._TableWithLabelsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/tests/tests/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/tests/TestSuite.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
     <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="" />
@@ -21,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -49,26 +57,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.CSVTest.executor": "Run",
-    "JUnit.KNNTest.estimate.executor": "Run",
-    "JUnit.KNNTest.executor": "Run",
-    "JUnit.TableTest.executor": "Run",
-    "JUnit.TableWithLabelsTest.executor": "Run",
-    "JUnit.TableWithLabelsTest.getLabelAsInteger.executor": "Run",
-    "JUnit.TableWithLabelsTest.getRowAt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/home/al438643/IdeaProjects/ProgAvanzada/src/main/java/ProgAvanz/Main.java",
-    "settings.editor.selected.configurable": "settings.sync"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.CSVTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KNNTest.estimate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KNNTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableWithLabelsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableWithLabelsTest.getLabelAsInteger.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableWithLabelsTest.getRowAt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/al438643/IdeaProjects/ProgAvanzada/src/main/java/ProgAvanz/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ProgAvanz.clasificar_flores" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src" />
       <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\resources" />
       <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\java\ProgAvanz" />
     </key>
@@ -219,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741021123391</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Previamente esta bien">
+      <option name="closed" value="true" />
+      <created>1741025251951</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1741025251951</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -228,7 +248,8 @@
     <MESSAGE value="Hay que arreglar el row with label" />
     <MESSAGE value="Changes by iker" />
     <MESSAGE value="creo que va" />
-    <option name="LAST_COMMIT_MESSAGE" value="creo que va" />
+    <MESSAGE value="Previamente esta bien" />
+    <option name="LAST_COMMIT_MESSAGE" value="Previamente esta bien" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
