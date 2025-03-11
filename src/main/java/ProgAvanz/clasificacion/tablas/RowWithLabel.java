@@ -1,8 +1,8 @@
-package ProgAvanz.clasificar_flores;
+package ProgAvanz.clasificacion.tablas;
 
 import java.util.List;
 
-public class RowWithLabel extends Row{
+public class RowWithLabel extends Row {
     private String label;
 
     public RowWithLabel(){

@@ -1,6 +1,5 @@
-package ProgAvanz.clasificar_flores;
+package ProgAvanz.clasificacion.tablas;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 

@@ -1,4 +1,8 @@
-package ProgAvanz.clasificar_flores;
+package ProgAvanz.clasificacion.algoritmos;
+
+import ProgAvanz.clasificacion.Distancias;
+import ProgAvanz.clasificacion.tablas.RowWithLabel;
+import ProgAvanz.clasificacion.tablas.TableWithLabels;
 
 import java.util.List;
 
@@ -9,12 +13,13 @@ public class KNN {
         tabla = data;
     }
     public Integer estimate(List<Double> sample) {
-
+        Distancias dis = new Distancias();
         int fila_distancia_minima = 0;
-        double distancia_minima = getDistancia(tabla.getRows().get(0).getData(),sample) ;
+        double distancia_minima = dis.getDistanciaEuclides(tabla.getRows().get(0).getData(),sample) ;
         for(int i = 1; i < tabla.getRows().size(); i++){
             RowWithLabel fila = (RowWithLabel) tabla.getRows().get(i);
-            double distancia = getDistancia(fila.getData(),sample);
+
+            double distancia = dis.getDistanciaEuclides(fila.getData(),sample);
             if (distancia < distancia_minima) {
                 fila_distancia_minima = i;
                 distancia_minima = distancia;
@@ -23,14 +28,5 @@ public class KNN {
         RowWithLabel fila = (RowWithLabel) tabla.getRows().get(fila_distancia_minima);
         return tabla.getLabelAsInteger(fila.getLabel());
     }
-    public static double getDistancia(List<Double> origen, List<Double> sample){
-        double sumatorio = 0;
-        for (int i = 0; i < origen.size(); i++){
-            sumatorio += KNN.getDistanciaAux(origen.get(i), sample.get(i));
-        }
-        return Math.sqrt(sumatorio);
-    }
-    public static double getDistanciaAux(double dato1, double dato2){
-        return Math.pow(dato1 - dato2, 2);
-    }
+
 }

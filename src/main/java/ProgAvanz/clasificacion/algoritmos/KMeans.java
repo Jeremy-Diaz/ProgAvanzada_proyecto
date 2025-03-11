@@ -1,6 +1,10 @@
-package ProgAvanz.clasificar_flores;
+package ProgAvanz.clasificacion.algoritmos;
+import ProgAvanz.clasificacion.AlgoritmoSinEntrenarException;
+import ProgAvanz.clasificacion.Distancias;
+import ProgAvanz.clasificacion.tablas.Row;
+import ProgAvanz.clasificacion.tablas.Table;
+
 import java.util.*;
-import java.util.random.*;
 
 public class KMeans{
     private int nClusters;
@@ -17,6 +21,7 @@ public class KMeans{
 
     public void train(Table data) throws AlgoritmoSinEntrenarException {
         Random numRandom = new Random(seed);
+        Distancias dis = new Distancias();
         List<Row> representantes = new LinkedList<>();
         for (int i = 0; i < nClusters; i++) {
             Row fila_representante = data.getRowAt(numRandom.nextInt());
@@ -24,13 +29,12 @@ public class KMeans{
             groups.put(fila_representante, new LinkedList<>());
 
         }
-        for (int i = 0; i < nIterations; i++) { // PREGUNTAR, ES MEJOR PONER EL METODO O USAR EL KNN COMO METODO ESTATICO O EXTENDER KNN?
-            // añadimos a todos a su correspondiente grupo
+        for (int i = 0; i < nIterations; i++) {
             for (Row fila : data.getRows()) {
-                double distancia_minima = KNN.getDistancia(fila.getData(), representantes.get(0).getData());
+                double distancia_minima = dis.getDistanciaEuclides(fila.getData(), representantes.get(0).getData());
                 Row representante_mas_cercano = representantes.get(0);
                 for (int j = 1; j < representantes.size(); j++) {
-                    double distancia = KNN.getDistancia(fila.getData(), representantes.get(0).getData());
+                    double distancia = dis.getDistanciaEuclides(fila.getData(), representantes.get(0).getData());
                     if (distancia < distancia_minima) {
                         distancia_minima = distancia;
                         representante_mas_cercano = representantes.get(i);
@@ -58,7 +62,8 @@ public class KMeans{
     }
 
     public Integer estimate (List < Double > sample) {
-        return 69;
+
+
     }
 
     public double mean (List < Double > lista) {

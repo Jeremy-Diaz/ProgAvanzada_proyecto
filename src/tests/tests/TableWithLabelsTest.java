@@ -1,8 +1,8 @@
 // TODO: Reemplazar por el nombre de tu paquete
-package ProgAvanz.clasificar_flores;
+package ProgAvanz.clasificacion;
 
 // TODO: Reemplazar por los imports de tu proyecto
-import ProgAvanz.clasificar_flores.*;
+import ProgAvanz.clasificacion.*;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

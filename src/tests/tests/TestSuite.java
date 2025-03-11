@@ -1,4 +1,4 @@
- package ProgAvanz.clasificar_flores;
+ package ProgAvanz.clasificacion;
 
 import org.junit.platform.suite.api.IncludeClassNamePatterns;
 import org.junit.platform.suite.api.SelectPackages;
