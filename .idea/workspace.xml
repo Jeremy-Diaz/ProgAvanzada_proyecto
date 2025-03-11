@@ -4,28 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="Previamente esta bien">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Distancias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/CSVTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/KNNTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/TableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/TableWithLabelsTest.java" afterDir="false" />
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="push">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/AlgoritmoSinEntrenarException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/AlgoritmoSinEntrenarException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/CSV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/Row.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/RowWithLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/RowWithLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificar_flores/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/TableWithLabels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/tests/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/tests/CSVTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/tests/KNNTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/tests/KNNTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/tests/TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/tests/TableTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/tests/TableWithLabelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/tests/TableWithLabelsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/tests/TestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/tests/TestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/CSVTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/CSVTest.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
     <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="" />
@@ -70,15 +53,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "JUnit.CSVTest.executor": "Run",
+    "JUnit.CSVTest.readTable.executor": "Run",
     "JUnit.KNNTest.estimate.executor": "Run",
     "JUnit.KNNTest.executor": "Run",
     "JUnit.TableTest.executor": "Run",
+    "JUnit.TableTest.getHeaders.executor": "Run",
+    "JUnit.TableTest.rowCount.executor": "Run",
     "JUnit.TableWithLabelsTest.executor": "Run",
     "JUnit.TableWithLabelsTest.getLabelAsInteger.executor": "Run",
     "JUnit.TableWithLabelsTest.getRowAt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
@@ -134,22 +119,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KNNTest.estimate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvanzada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ProgAvanz.clasificacion.algoritmos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
-      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.KNNTest" />
-      <option name="METHOD_NAME" value="estimate(java.util.List,java.lang.Integer)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TableTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
@@ -165,15 +134,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TableTest.getHeaders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificacion" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.TableTest" />
+      <option name="METHOD_NAME" value="getHeaders" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TableWithLabelsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ProgAvanz.clasificacion.algoritmos.*" />
+          <option name="PATTERN" value="ProgAvanz.clasificacion.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ProgAvanz.clasificar_flores" />
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificacion" />
       <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.TableWithLabelsTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
@@ -190,7 +175,7 @@
         <item itemvalue="JUnit.TableTest" />
         <item itemvalue="JUnit.KNNTest" />
         <item itemvalue="JUnit.CSVTest" />
-        <item itemvalue="JUnit.KNNTest.estimate" />
+        <item itemvalue="JUnit.TableTest.getHeaders" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741025251951</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="push">
+      <option name="closed" value="true" />
+      <created>1741688997364</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1741688997367</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -261,7 +254,8 @@
     <MESSAGE value="Changes by iker" />
     <MESSAGE value="creo que va" />
     <MESSAGE value="Previamente esta bien" />
-    <option name="LAST_COMMIT_MESSAGE" value="Previamente esta bien" />
+    <MESSAGE value="push" />
+    <option name="LAST_COMMIT_MESSAGE" value="push" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

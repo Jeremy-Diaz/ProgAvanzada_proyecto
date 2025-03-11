@@ -50,6 +50,7 @@ class CSVTest {
         assertEquals(List.of(5439.0,6964.0), table.getRowAt(24).getData());
         // assert that an arbitrary row is correctly read
         assertEquals(List.of(3852.0,4801.0), table.getRowAt(16).getData());
+
     }
 
     @Test

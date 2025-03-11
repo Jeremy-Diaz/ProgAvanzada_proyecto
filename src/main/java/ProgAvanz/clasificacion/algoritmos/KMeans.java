@@ -11,12 +11,14 @@ public class KMeans{
     private int nIterations;
     private long seed;
     private Map<Row,List<Row>> groups;
+    private List<Row> centroides;
 
     public KMeans(int numClusters, int numIterations, long seed){
         nClusters = numClusters;
         nIterations = numIterations;
         this.seed = seed;
         groups = new HashMap<>();
+        centroides = new ArrayList<>();
     }
 
     public void train(Table data) throws AlgoritmoSinEntrenarException {
@@ -62,6 +64,21 @@ public class KMeans{
     }
 
     public Integer estimate (List < Double > sample) {
+        Distancias dis = new Distancias();
+        Set<Row> centroides = new HashSet<>(groups.keySet());
+        Iterator<Row> it = centroides.iterator();
+        Row centroide_mas_cercano = it.next();
+        double distancia_menor = dis.getDistanciaEuclides(centroide_mas_cercano.getData(),sample); ;
+        while (it.hasNext()){
+            Row centroide = it.next();
+            double distancia = dis.getDistanciaEuclides(centroide.getData(),sample);
+            if ( distancia< distancia_menor){
+                distancia_menor = distancia;
+                centroide_mas_cercano = centroide;
+            }
+        }
+
+        return 0;
 
 
     }
