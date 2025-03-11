@@ -1,6 +1,6 @@
 package ProgAvanz.clasificacion;
 
-import ProgAvanz.clasificacion.tablas.CSV;
+import ProgAvanz.clasificacion.herramientas.CSV;
 import ProgAvanz.clasificacion.tablas.Table;
 import ProgAvanz.clasificacion.tablas.TableWithLabels;
 import org.junit.jupiter.api.AfterEach;

@@ -1,13 +1,13 @@
 package ProgAvanz.clasificacion.algoritmos;
 
-import ProgAvanz.clasificacion.Distancias;
+import ProgAvanz.clasificacion.herramientas.Distancias;
 import ProgAvanz.clasificacion.tablas.RowWithLabel;
 import ProgAvanz.clasificacion.tablas.TableWithLabels;
 
 import java.util.List;
 
 
-public class KNN {
+public class KNN implements Algorithm<TableWithLabels, Integer,List<Double>> {
     TableWithLabels tabla;
     public void train(TableWithLabels data) {
         tabla = data;

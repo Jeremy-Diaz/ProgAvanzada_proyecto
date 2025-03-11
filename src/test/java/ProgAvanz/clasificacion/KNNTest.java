@@ -1,7 +1,7 @@
 package ProgAvanz.clasificacion;
 
 import ProgAvanz.clasificacion.algoritmos.KNN;
-import ProgAvanz.clasificacion.tablas.CSV;
+import ProgAvanz.clasificacion.herramientas.CSV;
 import ProgAvanz.clasificacion.tablas.TableWithLabels;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

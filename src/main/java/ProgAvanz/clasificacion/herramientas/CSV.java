@@ -1,4 +1,9 @@
-package ProgAvanz.clasificacion.tablas;
+package ProgAvanz.clasificacion.herramientas;
+
+import ProgAvanz.clasificacion.tablas.Row;
+import ProgAvanz.clasificacion.tablas.RowWithLabel;
+import ProgAvanz.clasificacion.tablas.Table;
+import ProgAvanz.clasificacion.tablas.TableWithLabels;
 
 import java.io.File;
 import java.io.FileNotFoundException;

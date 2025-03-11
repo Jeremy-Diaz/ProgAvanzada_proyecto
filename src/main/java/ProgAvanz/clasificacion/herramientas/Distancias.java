@@ -1,4 +1,4 @@
-package ProgAvanz.clasificacion;
+package ProgAvanz.clasificacion.herramientas;
 
 import java.util.List;
 

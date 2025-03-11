@@ -34,4 +34,8 @@ public class TableWithLabels extends Table {
         return (RowWithLabel) super.getRowAt(i);
     }
 
+    public int getNumRows(){
+        return super.getRows().size();
+    }
+
 }

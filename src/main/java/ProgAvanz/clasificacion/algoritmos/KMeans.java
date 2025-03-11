@@ -1,12 +1,12 @@
 package ProgAvanz.clasificacion.algoritmos;
-import ProgAvanz.clasificacion.AlgoritmoSinEntrenarException;
-import ProgAvanz.clasificacion.Distancias;
+import ProgAvanz.clasificacion.excepciones.AlgoritmoSinEntrenarException;
+import ProgAvanz.clasificacion.herramientas.Distancias;
 import ProgAvanz.clasificacion.tablas.Row;
 import ProgAvanz.clasificacion.tablas.Table;
 
 import java.util.*;
 
-public class KMeans{
+public class KMeans implements Algorithm<Table, Integer, List<Double>>{
     private int nClusters;
     private int nIterations;
     private long seed;
@@ -24,30 +24,30 @@ public class KMeans{
     public void train(Table data) throws AlgoritmoSinEntrenarException {
         Random numRandom = new Random(seed);
         Distancias dis = new Distancias();
-        List<Row> representantes = new LinkedList<>();
+
         for (int i = 0; i < nClusters; i++) {
             Row fila_representante = data.getRowAt(numRandom.nextInt());
-            representantes.add(fila_representante);
+            centroides.add(fila_representante);
             groups.put(fila_representante, new LinkedList<>());
 
         }
         for (int i = 0; i < nIterations; i++) {
             for (Row fila : data.getRows()) {
-                double distancia_minima = dis.getDistanciaEuclides(fila.getData(), representantes.get(0).getData());
-                Row representante_mas_cercano = representantes.get(0);
-                for (int j = 1; j < representantes.size(); j++) {
-                    double distancia = dis.getDistanciaEuclides(fila.getData(), representantes.get(0).getData());
+                double distancia_minima = dis.getDistanciaEuclides(fila.getData(), centroides.get(0).getData());
+                Row representante_mas_cercano = centroides.get(0);
+                for (int j = 1; j < centroides.size(); j++) {
+                    double distancia = dis.getDistanciaEuclides(fila.getData(), centroides.get(0).getData());
                     if (distancia < distancia_minima) {
                         distancia_minima = distancia;
-                        representante_mas_cercano = representantes.get(i);
+                        representante_mas_cercano = centroides.get(i);
                     }
                 }
                 groups.get(representante_mas_cercano).add(fila);
             }
 
-            // Promedios PREGUNTAR
+
             List<Double> centroide = new LinkedList<>();
-            for (Row representante : representantes) {
+            for (Row representante : centroides) {
                 for (int k = 0; k < representante.getData().size(); k++) {
                     List<Double> lista_columna = new LinkedList<>();
                     for (Row elemento : groups.get(representante)) {
@@ -55,32 +55,26 @@ public class KMeans{
                     }
                     centroide.add(i,mean(lista_columna));
                 }
-                representantes.remove(representante);
+                centroides.remove(representante);
                 groups.remove(representante);
                 groups.put(new Row(centroide),new LinkedList<>());
             }
-            representantes.addAll(groups.keySet());
+            centroides.addAll(groups.keySet());
         }
     }
 
     public Integer estimate (List < Double > sample) {
         Distancias dis = new Distancias();
-        Set<Row> centroides = new HashSet<>(groups.keySet());
-        Iterator<Row> it = centroides.iterator();
-        Row centroide_mas_cercano = it.next();
-        double distancia_menor = dis.getDistanciaEuclides(centroide_mas_cercano.getData(),sample); ;
-        while (it.hasNext()){
-            Row centroide = it.next();
-            double distancia = dis.getDistanciaEuclides(centroide.getData(),sample);
-            if ( distancia< distancia_menor){
-                distancia_menor = distancia;
-                centroide_mas_cercano = centroide;
+        double distancia_mas_cercana = dis.getDistanciaEuclides(centroides.get(0).getData(),sample);
+        int grupo_mas_cercano = 0;
+        for(int i = 1; i < centroides.size(); i++){
+            double distancia = dis.getDistanciaEuclides(centroides.get(i).getData(),sample);
+            if (distancia < distancia_mas_cercana ){
+                distancia_mas_cercana = distancia;
+                grupo_mas_cercano = i;
             }
         }
-
-        return 0;
-
-
+        return grupo_mas_cercano;
     }
 
     public double mean (List < Double > lista) {
@@ -91,4 +85,4 @@ public class KMeans{
     }
 }
 
-// Preguntar si muchos fors anidados son kk o no :)
+// Preguntar si muchos fors anidados son kk o no :), DEBEMOS
