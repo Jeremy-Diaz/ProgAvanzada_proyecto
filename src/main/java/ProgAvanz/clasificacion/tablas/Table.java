@@ -1,5 +1,6 @@
 package ProgAvanz.clasificacion.tablas;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,8 +11,8 @@ public class Table {
 
     //constructores;
     public Table(){
-        headers = new LinkedList<>();
-        filas = new LinkedList<>();
+        headers = new ArrayList<>();
+        filas = new ArrayList<>();
     }
     //metodos
 
@@ -24,6 +25,13 @@ public class Table {
     }
     public Row getRowAt(int num_fila){
         return filas.get(num_fila);
+    }
+    public int getIndexOfRow(Row fila_elegida){
+        for (int i = 0; i < filas.size(); i++){
+            if (filas.get(i).getData().equals(fila_elegida.getData()))
+                return i;
+        }
+        return -1;
     }
     public int getRowCount(){
         return filas.size();

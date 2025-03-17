@@ -1,5 +1,6 @@
 package ProgAvanz.clasificacion.tablas;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class Row {
 
     //constructores
     public Row(){
-        datos = new LinkedList<>();
+        datos = new ArrayList<>();
     }
     public Row(List<Double> data){
         datos = data;
@@ -30,6 +31,7 @@ public class Row {
     public void addData (double dato){
         datos.add(dato);
     }
+
 
 
 }
