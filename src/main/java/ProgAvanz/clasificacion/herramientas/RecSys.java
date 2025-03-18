@@ -10,10 +10,10 @@ import java.util.*;
 public class RecSys {
 
 
-    Algorithm<Table,Integer,List<Double>> algoritmo;
-    List<String> nombres_de_item;
-    Table tabla;
-    Map<Integer,List<Row>> rows_clase;
+    private Algorithm<Table,Integer,List<Double>> algoritmo;
+    private List<String> nombres_de_item;
+    private Table tabla;
+    private Map<Integer,List<Row>> rows_clase;
 
 
     public RecSys(Algorithm algorithm){
