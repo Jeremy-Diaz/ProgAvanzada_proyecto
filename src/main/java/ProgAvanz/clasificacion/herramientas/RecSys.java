@@ -1,7 +1,8 @@
 package ProgAvanz.clasificacion.herramientas;
 
 import ProgAvanz.clasificacion.algoritmos.Algorithm;
-import ProgAvanz.clasificacion.excepciones.AlgoritmoSinEntrenarException;
+import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
+import ProgAvanz.clasificacion.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.tablas.Row;
 import ProgAvanz.clasificacion.tablas.Table;
 
@@ -22,7 +23,7 @@ public class RecSys {
         nombres_de_item = new ArrayList<>();
     }
 
-    public void train(Table trainData) throws AlgoritmoSinEntrenarException {
+    public void train(Table trainData) throws InvalidClusterNumberException {
         algoritmo.train(trainData);
         tabla = trainData;
         rows_clase = new HashMap<>();
@@ -37,7 +38,9 @@ public class RecSys {
         }
         nombres_de_item = testItemNames;
     }
-    public List<String> recomend(String nameLikedItem, int numRecomendations){
+    public List<String> recomend(String nameLikedItem, int numRecomendations) throws LikedItemNotFoundException{
+        if (!nombres_de_item.contains(nameLikedItem))
+            throw new LikedItemNotFoundException(nameLikedItem);
         List<String> lista = new LinkedList<>();
         int indice_item_liked = getIndexOf(nameLikedItem);
         if (indice_item_liked != -1){
