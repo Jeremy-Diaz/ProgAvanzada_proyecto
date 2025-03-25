@@ -31,7 +31,8 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>>{
         Distancias dis = new Distancias();
 
         for (int i = 0; i < nClusters; i++) {
-            Row fila_representante = data.getRowAt(numRandom.nextInt(0, data.getRowCount()));
+            int random = numRandom.nextInt(0, data.getRowCount() - 1);
+            Row fila_representante = data.getRowAt(random);
             centroides.add(fila_representante);
             groups.put(fila_representante, new LinkedList<>());
 
@@ -45,7 +46,7 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>>{
                     double distancia = dis.getDistanciaEuclides(fila.getData(), centroides.get(j).getData());
                     if (distancia < distancia_minima) {
                         distancia_minima = distancia;
-                        representante_mas_cercano = centroides.get(i);
+                        representante_mas_cercano = centroides.get(j);
                     }
                 }
                 groups.get(representante_mas_cercano).add(fila);
