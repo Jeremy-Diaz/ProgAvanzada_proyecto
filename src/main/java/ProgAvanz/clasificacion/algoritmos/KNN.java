@@ -26,7 +26,8 @@ public class KNN implements Algorithm<TableWithLabels, Integer,List<Double>> {
             }
         }
         RowWithLabel fila = (RowWithLabel) tabla.getRows().get(fila_distancia_minima);
-        return tabla.getLabelAsInteger(fila.getLabel());
+        int estimacion = tabla.getLabelAsInteger(fila.getLabel());
+        return estimacion;
     }
 
 }

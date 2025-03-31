@@ -25,7 +25,6 @@ public class RecSys {
 
     public void train(Table trainData) throws InvalidClusterNumberException {
         algoritmo.train(trainData);
-        tabla = trainData;
         rows_clase = new HashMap<>();
     }
     public void initialise(Table testData, List<String> testItemNames){
@@ -37,6 +36,7 @@ public class RecSys {
 
         }
         nombres_de_item = testItemNames;
+        tabla = testData;
     }
     public List<String> recommend(String nameLikedItem, int numRecomendations) throws LikedItemNotFoundException{
         if (!nombres_de_item.contains(nameLikedItem))
@@ -47,8 +47,10 @@ public class RecSys {
             Row fila_item_liked = tabla.getRowAt(indice_item_liked);
             int clase = algoritmo.estimate(fila_item_liked.getData()); // es necesario y eficiente?
             for( int i = 0; i < rows_clase.get(clase).size(); i++) {
-                lista.add(nombres_de_item.get(tabla.getIndexOfRow(rows_clase.get(clase).get(i)))); // eficiente?
-                if (i == numRecomendations-1)
+                String nombre_a_meter= nombres_de_item.get(tabla.getIndexOfRow(rows_clase.get(clase).get(i)));
+                if (!nombre_a_meter.equals(nameLikedItem))
+                    lista.add(nombre_a_meter); // eficiente?
+                if (lista.size() == numRecomendations)
                     break;
             }
         }
