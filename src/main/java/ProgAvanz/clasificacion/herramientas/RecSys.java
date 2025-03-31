@@ -38,7 +38,7 @@ public class RecSys {
         }
         nombres_de_item = testItemNames;
     }
-    public List<String> recomend(String nameLikedItem, int numRecomendations) throws LikedItemNotFoundException{
+    public List<String> recommend(String nameLikedItem, int numRecomendations) throws LikedItemNotFoundException{
         if (!nombres_de_item.contains(nameLikedItem))
             throw new LikedItemNotFoundException(nameLikedItem);
         List<String> lista = new LinkedList<>();

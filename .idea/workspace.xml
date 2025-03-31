@@ -4,28 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="puseho">
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="Acabado apartado 3">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SongRecSys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/recommender/songs_test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/recommender/songs_test_names.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/recommender/songs_test_withoutnames.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/recommender/songs_train.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/recommender/songs_train_names.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/recommender/songs_train_withoutnames.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/saveTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
-    <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="" />
+    <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -38,16 +44,14 @@
     &quot;assignee&quot;: &quot;Jeremy-Diaz&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Jeremy-Diaz/ProgAvanzada_proyecto.git",
-    "accountId": "f96d1055-cd73-4177-b0b7-248acff0175e"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jeremy-Diaz/ProgAvanzada_proyecto.git&quot;,
+    &quot;accountId&quot;: &quot;a5f87f32-315e-4f49-930f-63cd99ee9be4&quot;
   }
-}]]></component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="KMeansTest" />
-    </enabled-run-configurations>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -62,14 +66,14 @@
   "keyToString": {
     "JUnit.CSVTest.executor": "Run",
     "JUnit.CSVTest.readTable.executor": "Run",
-    "JUnit.KMeansTest.estimate.executor": "Debug",
     "JUnit.KMeansTest.executor": "Run",
     "JUnit.KNNTest.estimate.executor": "Run",
-    "JUnit.KNNTest.executor": "Debug",
+    "JUnit.KNNTest.executor": "Run",
+    "JUnit.RecSysTest.executor": "Run",
     "JUnit.TableTest.executor": "Run",
     "JUnit.TableTest.getHeaders.executor": "Run",
     "JUnit.TableTest.rowCount.executor": "Run",
-    "JUnit.TableWithLabelsTest.executor": "Debug",
+    "JUnit.TableWithLabelsTest.executor": "Run",
     "JUnit.TableWithLabelsTest.getLabelAsInteger.executor": "Run",
     "JUnit.TableWithLabelsTest.getRowAt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -87,8 +91,9 @@
       <recent name="ProgAvanz.clasificar_flores" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src" />
+      <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\resources\recommender" />
       <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\resources" />
+      <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src" />
       <recent name="C:\Users\jerem\IdeaProjects\ProgAvanzada_proyecto\src\main\java\ProgAvanz" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -98,11 +103,11 @@
       <recent name="ProgAvanz.clasificacion" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ProgAvanz.clasificacion.algoritmos" />
+      <recent name="ProgAvanz.clasificacion.herramientas" />
       <recent name="ProgAvanz.clasificar_flores" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TableWithLabelsTest">
+  <component name="RunManager" selected="JUnit.RecSysTest">
     <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
@@ -133,7 +138,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KNNTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecSysTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
         <pattern>
@@ -142,7 +147,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ProgAvanz.clasificacion" />
-      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.KNNTest" />
+      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.RecSysTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,10 +185,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TableWithLabelsTest" />
-        <item itemvalue="JUnit.KNNTest" />
-        <item itemvalue="JUnit.KMeansTest" />
+        <item itemvalue="JUnit.RecSysTest" />
         <item itemvalue="JUnit.CSVTest" />
+        <item itemvalue="JUnit.KMeansTest" />
+        <item itemvalue="JUnit.TableWithLabelsTest" />
         <item itemvalue="JUnit.TableTest" />
       </list>
     </recent_temporary>
@@ -289,31 +294,20 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/KMeansTest.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="31" />
+          <url>file://$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/KMeansTest.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="35" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java</url>
+          <line>53</line>
+          <properties class="ProgAvanz.clasificacion.RecSysTest.KNNRecSys" method="setUp">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="data" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

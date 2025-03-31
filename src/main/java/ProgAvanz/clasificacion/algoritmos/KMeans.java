@@ -95,5 +95,3 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>>{
         return suma / lista.size();
     }
 }
-
-// Preguntar si muchos fors anidados son kk o no :), DEBEMOS
