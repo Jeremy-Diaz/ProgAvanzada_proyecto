@@ -100,7 +100,7 @@
       <recent name="ProgAvanz.clasificar_flores" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RecSysTest$KNNRecSys.estimate">
+  <component name="RunManager" selected="JUnit.RecSysTest">
     <configuration name="CSVTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
@@ -181,8 +181,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RecSysTest$KNNRecSys.estimate" />
         <item itemvalue="JUnit.RecSysTest" />
+        <item itemvalue="JUnit.RecSysTest$KNNRecSys.estimate" />
         <item itemvalue="JUnit.RecSysTest$KMeansRecSys.estimate" />
         <item itemvalue="JUnit.RecSysTest$KMeansRecSys.estimate_likedItemNotInRecommendation" />
         <item itemvalue="JUnit.CSVTest" />

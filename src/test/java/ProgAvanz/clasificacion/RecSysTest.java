@@ -71,6 +71,7 @@ class RecSysTest {
             assertFalse(recommendations.contains("The Weekend"));
         }
 
+
         @Test
         @DisplayName("RecSys[KNN] - estimate: liked item not returned")
         void estimate_likedItemNotInRecommendation() throws LikedItemNotFoundException {
