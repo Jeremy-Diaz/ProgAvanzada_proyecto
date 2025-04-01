@@ -1,12 +1,12 @@
-package es.uji.matey;
+package ProgAvanz.clasificacion;
 
-import es.uji.matey.algorithms.Algorithm;
-import es.uji.matey.algorithms.KNN;
-import es.uji.matey.algorithms.KMeans;
-import es.uji.matey.data.CSV;
-import es.uji.matey.data.table.Table;
-import es.uji.matey.recommender.RecSys;
 
+import ProgAvanz.clasificacion.algoritmos.Algorithm;
+import ProgAvanz.clasificacion.algoritmos.KMeans;
+import ProgAvanz.clasificacion.algoritmos.KNN;
+import ProgAvanz.clasificacion.herramientas.CSV;
+import ProgAvanz.clasificacion.herramientas.RecSys;
+import ProgAvanz.clasificacion.tablas.Table;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;

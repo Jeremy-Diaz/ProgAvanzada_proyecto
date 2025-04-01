@@ -15,25 +15,31 @@ public class RecSys {
     private List<String> nombres_de_item;
     private Table tabla;
     private Map<Integer,List<Row>> rows_clase;
-
+    private Table tabla_train;
+    private List<Integer> etiquetas;
 
     public RecSys(Algorithm algorithm){
         algoritmo = algorithm;
         tabla = new Table();
         nombres_de_item = new ArrayList<>();
+        rows_clase = new HashMap<>();
+        tabla_train = new Table();
+        etiquetas = new ArrayList<>();
     }
 
     public void train(Table trainData) throws InvalidClusterNumberException {
         algoritmo.train(trainData);
-        rows_clase = new HashMap<>();
+        tabla_train = trainData;
+
     }
     public void initialise(Table testData, List<String> testItemNames){
         for (Row fila: testData.getRows()){
             int clase =algoritmo.estimate(fila.getData());
-            if(!rows_clase.containsKey(clase))
+            etiquetas.add(clase);
+            /*if(!rows_clase.containsKey(clase))
                 rows_clase.put(clase,new LinkedList<>());
             rows_clase.get(clase).add(fila);
-
+            */
         }
         nombres_de_item = testItemNames;
         tabla = testData;
@@ -45,16 +51,27 @@ public class RecSys {
         int indice_item_liked = getIndexOf(nameLikedItem);
         if (indice_item_liked != -1){
             Row fila_item_liked = tabla.getRowAt(indice_item_liked);
-            int clase = algoritmo.estimate(fila_item_liked.getData()); // es necesario y eficiente?
-            for( int i = 0; i < rows_clase.get(clase).size(); i++) {
+            for (int i = 0; i< etiquetas.size();i++){
+                if(lista.size() < numRecomendations ){
+                    if (etiquetas.get(indice_item_liked) == etiquetas.get(i) && tabla.getRowAt(indice_item_liked) != tabla.getRowAt(i)) {
+                        lista.add(nombres_de_item.get(i));
+                    }
+                }
+            }
+        }
+        return lista;
+
+            /*Row fila_item_liked = tabla.getRowAt(indice_item_liked);
+            int clase = algoritmo.estimate(fila_item_liked.getData());// es necesario y eficiente?
+            List<Row> lista_clase = rows_clase.get(clase);
+            for( int i = 0; i < lista_clase.size(); i++) {
                 String nombre_a_meter= nombres_de_item.get(tabla.getIndexOfRow(rows_clase.get(clase).get(i)));
                 if (!nombre_a_meter.equals(nameLikedItem))
                     lista.add(nombre_a_meter); // eficiente?
                 if (lista.size() == numRecomendations)
                     break;
             }
-        }
-        return lista;
+             */
     }
 
 

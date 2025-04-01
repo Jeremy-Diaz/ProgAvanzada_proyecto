@@ -15,18 +15,16 @@ public class TableWithLabels extends Table {
     }
 
     // metodos
-    /*public void addLabel(String etiqueta) {
+    private void addLabel(String etiqueta) {
         if(!labelsToIndex.containsKey(etiqueta)){
             labelsToIndex.put(etiqueta,labelsToIndex.size());
         }
-    }*/
+    }
+
     public boolean containsLabel( String etiqueta){
         return labelsToIndex.containsKey(etiqueta);
     }
     public int getLabelAsInteger(String etiqueta) {
-        if(!labelsToIndex.containsKey(etiqueta)){
-            labelsToIndex.put(etiqueta,labelsToIndex.size());
-        }
         return labelsToIndex.get(etiqueta);
     }
     @Override
@@ -38,4 +36,8 @@ public class TableWithLabels extends Table {
         return super.getRows().size();
     }
 
+    public void addRow(RowWithLabel fila){
+        addLabel(fila.getLabel());
+        super.addRow(fila);
+    }
 }

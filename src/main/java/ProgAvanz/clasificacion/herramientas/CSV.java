@@ -44,12 +44,11 @@ public class CSV {
             linea = sc.nextLine();
             String[] datos = linea.split(",");
             String etiqueta = datos[datos.length-1];
-            fila.setLabel(etiqueta);
-            if(!tabla.containsLabel(etiqueta)) {tabla.getLabelAsInteger(etiqueta);}
             for(int i = 0; i < datos.length -1 ; i++){
                 double numero = Double.parseDouble(datos[i]);
                 fila.addData(numero);
             }
+            fila.setLabel(etiqueta);
             tabla.addRow(fila);
         }
         return tabla;
