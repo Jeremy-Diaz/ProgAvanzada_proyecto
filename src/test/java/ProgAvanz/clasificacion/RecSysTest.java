@@ -52,7 +52,7 @@ class RecSysTest {
         @BeforeEach
             // TODO: añadir o eliminar excepciones según tu implementación
         void setUp() throws IOException, URISyntaxException, InvalidClusterNumberException {
-            trainTable = new CSV().readTableWithLabels(songsFolder + separator +"songs_train_withoutnames.csv");
+            trainTable = new CSV().readTableWithLabels(songsFolder + separator +"songs_train.csv");
             testTable = new CSV().readTableWithLabels(songsFolder + separator + "songs_test.csv");
             testItemNames = readNames(songsFolder + separator + "songs_test_names.csv");
 
