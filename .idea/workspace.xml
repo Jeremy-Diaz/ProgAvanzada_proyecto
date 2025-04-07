@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="sigue sin ir">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Interfaces/Distance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/EuclideanDIstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/ManhattanDistance.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Interfaces/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KNN.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/SongRecSys.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
     <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="" />
@@ -19,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -41,7 +48,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -57,9 +64,11 @@
     "Application.SongRecSys.executor": "Run",
     "JUnit.CSVTest.executor": "Run",
     "JUnit.CSVTest.readTable.executor": "Run",
+    "JUnit.EuclideanDistanceTest.executor": "Run",
     "JUnit.KMeansTest.executor": "Run",
     "JUnit.KNNTest.estimate.executor": "Run",
     "JUnit.KNNTest.executor": "Run",
+    "JUnit.ManhattanDistanceTest.executor": "Run",
     "JUnit.RecSysTest$KMeansRecSys.estimate.executor": "Debug",
     "JUnit.RecSysTest$KMeansRecSys.estimate_likedItemNotInRecommendation.executor": "Run",
     "JUnit.RecSysTest$KNNRecSys.estimate.executor": "Debug",
@@ -103,7 +112,7 @@
       <recent name="ProgAvanz.clasificar_flores" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RecSysTest$KNNRecSys">
+  <component name="RunManager">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.SongRecSys" />
       <module name="ProgAvanzada" />
@@ -311,6 +320,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/TableWithLabels.java</url>
           <line>18</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KNN.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,6 +1,5 @@
-package ProgAvanz.clasificacion.algoritmos;
+package ProgAvanz.clasificacion.Interfaces;
 
-import ProgAvanz.clasificacion.excepciones.AlgoritmoSinEntrenarException;
 import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.tablas.Table;
 

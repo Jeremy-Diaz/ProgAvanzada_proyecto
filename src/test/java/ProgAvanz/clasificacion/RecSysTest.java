@@ -3,7 +3,7 @@ package ProgAvanz.clasificacion;
 
 // TODO: Pon los imports especificos a tu proyecto
 
-import ProgAvanz.clasificacion.algoritmos.Algorithm;
+import ProgAvanz.clasificacion.Interfaces.Algorithm;
 import ProgAvanz.clasificacion.algoritmos.KMeans;
 import ProgAvanz.clasificacion.algoritmos.KNN;
 import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;

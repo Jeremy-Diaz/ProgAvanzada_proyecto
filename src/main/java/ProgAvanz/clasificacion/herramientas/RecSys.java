@@ -1,6 +1,6 @@
 package ProgAvanz.clasificacion.herramientas;
 
-import ProgAvanz.clasificacion.algoritmos.Algorithm;
+import ProgAvanz.clasificacion.Interfaces.Algorithm;
 import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.tablas.Row;

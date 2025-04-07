@@ -1,7 +1,7 @@
 package ProgAvanz.clasificacion;
 
 
-import ProgAvanz.clasificacion.algoritmos.Algorithm;
+import ProgAvanz.clasificacion.Interfaces.Algorithm;
 import ProgAvanz.clasificacion.algoritmos.KMeans;
 import ProgAvanz.clasificacion.algoritmos.KNN;
 import ProgAvanz.clasificacion.herramientas.CSV;

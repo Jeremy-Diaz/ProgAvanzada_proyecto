@@ -1,19 +1,22 @@
 package ProgAvanz.clasificacion.algoritmos;
-import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
+import ProgAvanz.clasificacion.Interfaces.Algorithm;
+import ProgAvanz.clasificacion.Interfaces.Distance;
 import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.herramientas.Distancias;
+import ProgAvanz.clasificacion.herramientas.EuclideanDIstance;
 import ProgAvanz.clasificacion.tablas.Row;
 import ProgAvanz.clasificacion.tablas.Table;
 
 import java.util.*;
 
-public class KMeans implements Algorithm<Table, Integer, List<Double>>{
+public class KMeans implements Algorithm<Table, Integer, List<Double>> {
     private int nClusters;
     private int nIterations;
     private long seed;
     private Map<Row,List<Row>> groups;
     private List<Row> centroides;
     private Set<Integer> valores_random;
+    private Distance distancia;
 
     public KMeans(int numClusters, int numIterations, long seed){
 
@@ -22,6 +25,17 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>>{
         this.seed = seed;
         groups = new HashMap<>();
         centroides = new ArrayList<>();
+        distancia = new EuclideanDIstance();
+    }
+
+    public KMeans(int numClusters, int numIterations, long seed, Distance type_distance){
+
+        nClusters = numClusters;
+        nIterations = numIterations;
+        this.seed = seed;
+        groups = new HashMap<>();
+        centroides = new ArrayList<>();
+        distancia = type_distance;
     }
 
     public void train(Table data) throws InvalidClusterNumberException {
@@ -79,9 +93,9 @@ public class KMeans implements Algorithm<Table, Integer, List<Double>>{
         double distancia_mas_cercana = dis.getDistanciaEuclides(centroides.get(0).getData(), sample);
         int grupo_mas_cercano = 0;
         for(int i = 1; i < centroides.size(); i++){
-            double distancia = dis.getDistanciaEuclides(centroides.get(i).getData(),sample);
-            if (distancia <= distancia_mas_cercana ){
-                distancia_mas_cercana = distancia;
+            double distanc=distancia.calculateDistance(centroides.get(i).getData(),sample);
+            if (distanc <= distancia_mas_cercana ){
+                distancia_mas_cercana = distanc;
                 grupo_mas_cercano = i;
             }
         }
