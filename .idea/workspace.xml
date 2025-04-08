@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="ya va">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSVLabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSVLabeledFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSVUnlabeledFileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSVUnlabeledFileReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/ReaderTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/ReaderTemplate.java" afterDir="false" />
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="Acabado apartado 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/TableWithLabels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/TableWithLabels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/KMeansTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/KMeansTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
     <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="" />
@@ -20,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -34,22 +36,20 @@
     &quot;assignee&quot;: &quot;Jeremy-Diaz&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Jeremy-Diaz/ProgAvanzada_proyecto.git&quot;,
-    &quot;accountId&quot;: &quot;a5f87f32-315e-4f49-930f-63cd99ee9be4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Jeremy-Diaz/ProgAvanzada_proyecto.git",
+    "accountId": "f96d1055-cd73-4177-b0b7-248acff0175e"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2tD7Gms4hork22owMNEV03YcFVQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,6 +60,7 @@
     "JUnit.CSVLabeledFileReaderTest.executor": "Run",
     "JUnit.CSVTest.executor": "Run",
     "JUnit.CSVTest.readTable.executor": "Run",
+    "JUnit.CSVUnlabeledFileReaderTest.executor": "Run",
     "JUnit.KMeansTest.executor": "Run",
     "JUnit.KNNTest.estimate.executor": "Run",
     "JUnit.KNNTest.executor": "Run",
@@ -106,7 +107,7 @@
       <recent name="ProgAvanz.clasificar_flores" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ProgAvanz.clasificacion in ProgAvanzada">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.SongRecSys" />
       <module name="ProgAvanzada" />
@@ -135,6 +136,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProgAvanz.clasificacion in ProgAvanzada" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProgAvanzada" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ProgAvanz.clasificacion.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ProgAvanz.clasificacion" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RecSysTest$KNNRecSys" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProgAvanzada" />
       <extension name="coverage">
@@ -146,22 +161,6 @@
       <option name="PACKAGE_NAME" value="ProgAvanz.clasificacion.RecSysTest" />
       <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.RecSysTest$KNNRecSys" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RecSysTest$KNNRecSys.estimate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProgAvanzada" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ProgAvanz.clasificacion.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ProgAvanz.clasificacion.RecSysTest" />
-      <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.RecSysTest$KNNRecSys" />
-      <option name="METHOD_NAME" value="estimate" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -183,10 +182,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RecSysTest$KNNRecSys" />
-        <item itemvalue="JUnit.RecSysTest$KNNRecSys.estimate" />
+        <item itemvalue="JUnit.ProgAvanz.clasificacion in ProgAvanzada" />
         <item itemvalue="JUnit.RecSysTest" />
         <item itemvalue="Application.SongRecSys" />
+        <item itemvalue="JUnit.RecSysTest$KNNRecSys" />
         <item itemvalue="JUnit.KNNTest" />
       </list>
     </recent_temporary>
@@ -264,23 +263,7 @@
       <option name="project" value="LOCAL" />
       <updated>1742216286757</updated>
     </task>
-    <task id="LOCAL-00009" summary="sigue sin ir">
-      <option name="closed" value="true" />
-      <created>1743503447023</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1743503447023</updated>
-    </task>
-    <task id="LOCAL-00010" summary="ya va">
-      <option name="closed" value="true" />
-      <created>1743591726611</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1743591726611</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -292,9 +275,7 @@
     <MESSAGE value="Previamente esta bien" />
     <MESSAGE value="push" />
     <MESSAGE value="Acabado apartado 3" />
-    <MESSAGE value="sigue sin ir" />
-    <MESSAGE value="ya va" />
-    <option name="LAST_COMMIT_MESSAGE" value="ya va" />
+    <option name="LAST_COMMIT_MESSAGE" value="Acabado apartado 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -308,21 +289,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/TableWithLabelsTest.java</url>
           <line>101</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/TableWithLabels.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

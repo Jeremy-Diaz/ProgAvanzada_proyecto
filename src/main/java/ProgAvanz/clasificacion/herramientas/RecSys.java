@@ -51,10 +51,11 @@ public class RecSys {
         int indice_item_liked = getIndexOf(nameLikedItem);
         if (indice_item_liked != -1){
             Row fila_item_liked = tabla.getRowAt(indice_item_liked);
-            int etiqueta_a_buscar = etiquetas.get(indice_item_liked);
-            for (int i = 0; i< etiquetas.size() &&  lista.size() < numRecomendations ;i++){
-                if (etiqueta_a_buscar == etiquetas.get(i) && tabla.getRowAt(indice_item_liked) != tabla.getRowAt(i)) {
+            for (int i = 0; i< etiquetas.size();i++){
+                if(lista.size() < numRecomendations ){
+                    if (etiquetas.get(indice_item_liked) == etiquetas.get(i) && tabla.getRowAt(indice_item_liked) != tabla.getRowAt(i)) {
                         lista.add(nombres_de_item.get(i));
+                    }
                 }
             }
         }

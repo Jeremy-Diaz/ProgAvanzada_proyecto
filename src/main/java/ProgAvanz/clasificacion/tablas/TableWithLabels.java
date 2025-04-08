@@ -32,6 +32,13 @@ public class TableWithLabels extends Table {
         return (RowWithLabel) super.getRowAt(i);
     }
 
+    @Override
+    public void addHeaders(String[] headers) {
+        for (int i = 0; i < headers.length - 1; i++){
+            getHeaders().add(headers[i]);
+        }
+    }
+
     public int getNumRows(){
         return super.getRows().size();
     }
