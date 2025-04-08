@@ -11,7 +11,8 @@ public class FileReader<T extends Table> extends ReaderTemplate<T> {
 
 
     public void openSource(String source) throws FileNotFoundException {
-        sc = new Scanner(new File(source));
+        String nombre = getClass().getClassLoader().getResource(source).getFile();
+        sc = new Scanner(new File(nombre));
     }
 
     @Override
@@ -34,6 +35,6 @@ public class FileReader<T extends Table> extends ReaderTemplate<T> {
     }
     @Override
     public String getNextData() {
-        return sc.next();
+        return sc.nextLine();
     }
 }
