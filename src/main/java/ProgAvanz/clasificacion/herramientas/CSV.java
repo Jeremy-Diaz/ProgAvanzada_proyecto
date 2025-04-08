@@ -27,6 +27,7 @@ public class CSV {
             }
             tabla.addRow(fila);
         }
+        sc.close();
         return tabla;
     }
 
@@ -36,8 +37,7 @@ public class CSV {
         TableWithLabels tabla = new TableWithLabels();
         String linea = sc.nextLine();
         String[] headers = linea.split(",");
-        for (int i = 0; i < headers.length-1; i++ )
-            tabla.addHeader(headers[i]);
+        tabla.addHeaders(headers);
 
         while(sc.hasNextLine()){
             RowWithLabel fila = new RowWithLabel();
@@ -51,6 +51,7 @@ public class CSV {
             fila.setLabel(etiqueta);
             tabla.addRow(fila);
         }
+        sc.close();
         return tabla;
     }
 }

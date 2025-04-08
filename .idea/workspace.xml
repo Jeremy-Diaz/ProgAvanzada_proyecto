@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="sigue sin ir">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Interfaces/Distance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/EuclideanDIstance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/ManhattanDistance.java" afterDir="false" />
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="ya va">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSVLabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSVUnlabeledFileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/FileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/ReaderTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Interfaces/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KNN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KNN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/RecSys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/SongRecSys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/SongRecSys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/herramientas/CSV.java" afterDir="false" />
     </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
     <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="" />
@@ -26,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -54,42 +50,42 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2tD7Gms4hork22owMNEV03YcFVQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.SongRecSys.executor": "Run",
-    "JUnit.CSVTest.executor": "Run",
-    "JUnit.CSVTest.readTable.executor": "Run",
-    "JUnit.EuclideanDistanceTest.executor": "Run",
-    "JUnit.KMeansTest.executor": "Run",
-    "JUnit.KNNTest.estimate.executor": "Run",
-    "JUnit.KNNTest.executor": "Run",
-    "JUnit.ManhattanDistanceTest.executor": "Run",
-    "JUnit.RecSysTest$KMeansRecSys.estimate.executor": "Debug",
-    "JUnit.RecSysTest$KMeansRecSys.estimate_likedItemNotInRecommendation.executor": "Run",
-    "JUnit.RecSysTest$KNNRecSys.estimate.executor": "Debug",
-    "JUnit.RecSysTest$KNNRecSys.executor": "Run",
-    "JUnit.RecSysTest.executor": "Run",
-    "JUnit.TableTest.executor": "Run",
-    "JUnit.TableTest.getHeaders.executor": "Run",
-    "JUnit.TableTest.rowCount.executor": "Run",
-    "JUnit.TableWithLabelsTest.executor": "Run",
-    "JUnit.TableWithLabelsTest.getLabelAsInteger.executor": "Run",
-    "JUnit.TableWithLabelsTest.getRowAt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "/home/al438643/IdeaProjects/ProgAvanzada/src/main/java/ProgAvanz/Main.java",
-    "settings.editor.selected.configurable": "settings.sync"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.SongRecSys.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CSVTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CSVTest.readTable.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KMeansTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KNNTest.estimate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KNNTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RecSysTest$KMeansRecSys.estimate.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RecSysTest$KMeansRecSys.estimate_likedItemNotInRecommendation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RecSysTest$KNNRecSys.estimate.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RecSysTest$KNNRecSys.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RecSysTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableTest.getHeaders.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableTest.rowCount.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableWithLabelsTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableWithLabelsTest.getLabelAsInteger.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TableWithLabelsTest.getRowAt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/home/al438643/IdeaProjects/ProgAvanzada/src/main/java/ProgAvanz/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ProgAvanz.clasificar_flores" />
@@ -112,7 +108,7 @@
       <recent name="ProgAvanz.clasificar_flores" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.RecSysTest$KNNRecSys">
     <configuration name="SongRecSys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProgAvanz.clasificacion.SongRecSys" />
       <module name="ProgAvanzada" />
@@ -278,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743503447023</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ya va">
+      <option name="closed" value="true" />
+      <created>1743591726611</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1743591726611</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -291,7 +295,8 @@
     <MESSAGE value="push" />
     <MESSAGE value="Acabado apartado 3" />
     <MESSAGE value="sigue sin ir" />
-    <option name="LAST_COMMIT_MESSAGE" value="sigue sin ir" />
+    <MESSAGE value="ya va" />
+    <option name="LAST_COMMIT_MESSAGE" value="ya va" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -320,11 +325,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/tablas/TableWithLabels.java</url>
           <line>18</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/algoritmos/KNN.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
