@@ -6,8 +6,9 @@ import ProgAvanz.clasificacion.tablas.TableWithLabels;
 
 public class CSVLabeledFileReader extends FileReader<TableWithLabels> {
 
-    public CSVLabeledFileReader() {
+    public CSVLabeledFileReader(String ref) {
         table = new TableWithLabels();
+        super.ref = ref;
     }
     @Override
     public void processData(String data){

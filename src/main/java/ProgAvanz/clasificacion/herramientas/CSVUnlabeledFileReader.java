@@ -4,8 +4,9 @@ import ProgAvanz.clasificacion.tablas.Row;
 import ProgAvanz.clasificacion.tablas.Table;
 
 public class CSVUnlabeledFileReader extends FileReader<Table>{
-    public CSVUnlabeledFileReader() {
+    public CSVUnlabeledFileReader(String ref) {
         table = new Table();
+        super.ref = ref;
     }
     @Override
     public void processData(String data) {
