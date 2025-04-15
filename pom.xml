@@ -44,6 +44,19 @@
             <version>24-ea+5</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <executable>${java.home}/bin/java</executable>
+                    <mainClass>ProgAvanz.clasificacion.GUI.FXapp</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 
