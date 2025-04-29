@@ -1,7 +1,7 @@
 package ProgAvanz.clasificacion;
 
-import ProgAvanz.clasificacion.tablas.RowWithLabel;
-import ProgAvanz.clasificacion.tablas.TableWithLabels;
+import ProgAvanz.clasificacion.Modelo.tablas.RowWithLabel;
+import ProgAvanz.clasificacion.Modelo.tablas.TableWithLabels;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

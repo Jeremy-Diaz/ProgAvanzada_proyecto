@@ -3,14 +3,14 @@ package ProgAvanz.clasificacion;
 
 // TODO: Pon los imports especificos a tu proyecto
 
-import ProgAvanz.clasificacion.Interfaces.Algorithm;
-import ProgAvanz.clasificacion.algoritmos.KMeans;
-import ProgAvanz.clasificacion.algoritmos.KNN;
-import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
-import ProgAvanz.clasificacion.excepciones.LikedItemNotFoundException;
-import ProgAvanz.clasificacion.herramientas.CSV;
-import ProgAvanz.clasificacion.herramientas.RecSys;
-import ProgAvanz.clasificacion.tablas.Table;
+import ProgAvanz.clasificacion.Modelo.Interfaces.Algorithm;
+import ProgAvanz.clasificacion.Modelo.algoritmos.KMeans;
+import ProgAvanz.clasificacion.Modelo.algoritmos.KNN;
+import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
+import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
+import ProgAvanz.clasificacion.Modelo.herramientas.CSV;
+import ProgAvanz.clasificacion.Modelo.herramientas.RecSys;
+import ProgAvanz.clasificacion.Modelo.tablas.Table;
 import org.junit.jupiter.api.*;
 
 import java.io.File;

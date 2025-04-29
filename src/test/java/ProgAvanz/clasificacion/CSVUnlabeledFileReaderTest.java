@@ -2,8 +2,8 @@ package ProgAvanz.clasificacion;// TODO: Remplazar <nombre> por el nombre de tu 
 
 // TODO: Pon los imports especificos a tu proyecto
 
-import ProgAvanz.clasificacion.herramientas.CSVUnlabeledFileReader;
-import ProgAvanz.clasificacion.tablas.Table;
+import ProgAvanz.clasificacion.Modelo.herramientas.CSVUnlabeledFileReader;
+import ProgAvanz.clasificacion.Modelo.tablas.Table;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

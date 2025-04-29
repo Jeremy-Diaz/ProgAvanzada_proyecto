@@ -52,7 +52,7 @@
                 <version>0.0.8</version>
                 <configuration>
                     <executable>${java.home}/bin/java</executable>
-                    <mainClass>ProgAvanz.clasificacion.GUI.FXapp</mainClass>
+                    <mainClass>ProgAvanz.clasificacion.Vista.FXapp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

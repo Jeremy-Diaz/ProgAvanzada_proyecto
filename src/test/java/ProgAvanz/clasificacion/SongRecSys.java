@@ -1,12 +1,12 @@
 package ProgAvanz.clasificacion;
 
 
-import ProgAvanz.clasificacion.Interfaces.Algorithm;
-import ProgAvanz.clasificacion.algoritmos.KMeans;
-import ProgAvanz.clasificacion.algoritmos.KNN;
-import ProgAvanz.clasificacion.herramientas.CSV;
-import ProgAvanz.clasificacion.herramientas.RecSys;
-import ProgAvanz.clasificacion.tablas.Table;
+import ProgAvanz.clasificacion.Modelo.Interfaces.Algorithm;
+import ProgAvanz.clasificacion.Modelo.algoritmos.KMeans;
+import ProgAvanz.clasificacion.Modelo.algoritmos.KNN;
+import ProgAvanz.clasificacion.Modelo.herramientas.CSV;
+import ProgAvanz.clasificacion.Modelo.herramientas.RecSys;
+import ProgAvanz.clasificacion.Modelo.tablas.Table;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;

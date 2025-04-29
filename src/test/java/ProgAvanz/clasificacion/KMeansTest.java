@@ -1,9 +1,9 @@
 package ProgAvanz.clasificacion;
 
-import ProgAvanz.clasificacion.algoritmos.KMeans;
-import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
-import ProgAvanz.clasificacion.herramientas.CSV;
-import ProgAvanz.clasificacion.tablas.TableWithLabels;
+import ProgAvanz.clasificacion.Modelo.algoritmos.KMeans;
+import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
+import ProgAvanz.clasificacion.Modelo.herramientas.CSV;
+import ProgAvanz.clasificacion.Modelo.tablas.TableWithLabels;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

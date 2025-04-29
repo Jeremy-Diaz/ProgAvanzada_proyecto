@@ -3,8 +3,8 @@ package ProgAvanz.clasificacion;
 
 // TODO: Pon los imports especificos a tu proyecto
 
-import ProgAvanz.clasificacion.Interfaces.Distance;
-import ProgAvanz.clasificacion.herramientas.ManhattanDistance;
+import ProgAvanz.clasificacion.Modelo.Interfaces.Distance;
+import ProgAvanz.clasificacion.Modelo.herramientas.ManhattanDistance;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
