@@ -1,6 +1,5 @@
 package ProgAvanz.clasificacion.Vista;
 
-import ProgAvanz.clasificacion.Controlador.Escuchadora;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,10 +11,6 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import java.awt.event.ActionEvent;
-
-import static java.awt.event.ActionEvent.ACTION_FIRST;
 
 public class FXapp extends Application {
     public static void main(String[] args) {
@@ -34,7 +29,6 @@ public class FXapp extends Application {
         Label recomendacion = new Label("Tipo de recomendación");
         Label distancia = new Label("Tipo de recomendacion");
         RadioButton seleccion_tipo_recomendacion_1 = new RadioButton("KNN");
-        seleccion_tipo_recomendacion_1.setOnAction(new Escuchadora());
         RadioButton seleccion_tipo_recomendacion_2 = new RadioButton("K_MEANS");
         RadioButton seleccion_tipo_distancia_1 = new RadioButton("Manhattan");
         RadioButton seleccion_tipo_distancia_2 = new RadioButton("Euclidea");
