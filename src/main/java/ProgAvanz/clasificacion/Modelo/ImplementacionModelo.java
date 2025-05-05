@@ -15,6 +15,7 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
     private Distance tipo_distancia = null;
     private RecSys recomendaciones = null;
     private String separator = System.getProperty("file.separator");
+    private boolean isKNN = false;
     // TODO: cambiar ruta si hace falta
     private String songsFolder = "recommender";
 
@@ -36,25 +37,36 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
     @Override
     public void kmeans() {
         algoritmo = new KMeans(15,10,53,tipo_distancia);
+        isKNN = false;
     }
 
     @Override
     public void knn() {
         algoritmo = new KNN(tipo_distancia);
+        isKNN = true;
     }
 
     @Override
     public void recommend() {
         recomendaciones = new RecSys(algoritmo);
+        if(isKNN){
+            setUpKNN();
+        }
+        else{
+            setUpKMeans();
+        }
+    }
+
+    private void setUpKMeans() {
+
+    }
+
+    public void setUpKNN(){
 
     }
 
     @Override
     public List<String> tituloCanciones() {
         return List.of();
-    }
-
-    public void setUp(){
-
     }
 }
