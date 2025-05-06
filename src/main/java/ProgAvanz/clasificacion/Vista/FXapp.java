@@ -1,24 +1,38 @@
 package ProgAvanz.clasificacion.Vista;
 
+import ProgAvanz.clasificacion.Controlador.Controlador;
+import ProgAvanz.clasificacion.Controlador.ImplementacionControlador;
+import ProgAvanz.clasificacion.Modelo.CambioModelo;
+import ProgAvanz.clasificacion.Modelo.ImplementacionModelo;
+import ProgAvanz.clasificacion.Modelo.InterrogaModelo;
+import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.Label;
+import javafx.geometry.Pos;
+import javafx.scene.control.*;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class FXapp extends Application {
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
+
+public class FXapp extends Application implements InterrogaVista, InterrogaModelo {
+    private CambioModelo modelo = new ImplementacionModelo();
+    private Controlador controlador = new ImplementacionControlador(modelo,this);
+    private String cancion = "";
+    public FXapp() throws IOException, URISyntaxException {
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
 
     @Override
-    public void start(Stage stagePrimario) {
+    public void start(Stage stagePrimario)  {
 
         VBox general = new VBox(10);
 
@@ -56,14 +70,33 @@ public class FXapp extends Application {
         VBox bloque_canciones = new VBox();
 
         Label titulos_canciones  =new Label("Titulos de canciones");
-        ObservableList<String> canciones = FXCollections.observableArrayList();
+        ObservableList<String> canciones = FXCollections.observableArrayList(tituloCanciones());
         ListView<String> lista = new ListView<>(canciones);
+
+        lista.getSelectionModel().selectedItemProperty().addListener((item,valorInicial,valorActual) -> {
+            cancion = valorActual;
+        });
 
         bloque_canciones.getChildren().addAll(titulos_canciones,lista);
 
+        // boton aplicar y boton cambio de pagina
 
+        HBox cambioPestaña = new HBox();
+        Button cambio = new Button("Recomendar");
+        cambio.setOnAction(actionEvent -> {
+            try {
+                nuevaVentana();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            } catch (URISyntaxException e) {
+                throw new RuntimeException(e);
+            } catch (LikedItemNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        cambioPestaña.getChildren().addAll(cambio);
 
-        general.getChildren().addAll(bloque_recomendacion_distancia,bloque_canciones);
+        general.getChildren().addAll(bloque_recomendacion_distancia,bloque_canciones,cambioPestaña);
 
         stagePrimario.setTitle("Recomendadorneitor 3000");
         stagePrimario.setScene(new Scene(general, 400, 400));
@@ -72,5 +105,38 @@ public class FXapp extends Application {
 
 
 
+    }
+
+
+
+    @Override
+    public List<String> tituloCanciones() {
+        return modelo.tituloCanciones();
+    }
+
+    @Override
+    public String getCancion() {
+        return "";
+    }
+    private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException {
+        controlador.cambioPestaña();
+        VBox general2 = new VBox();
+        Label numeroRecomendaciones = new Label("Numero de recomendaciones: ");
+        Spinner<Integer> numero = new Spinner<>(1,tituloCanciones().size(),1);
+
+        HBox recomendaciones = new HBox(numeroRecomendaciones,numero);
+        general2.getChildren().addAll(recomendaciones);
+
+        VBox bloque_canciones = new VBox();
+
+        Label titulos_canciones  =new Label("Lista de canciones parecidas a "+cancion+": ");
+        ObservableList<String> canciones = FXCollections.observableArrayList(controlador.recommend(cancion,numero.getValue()));
+        ListView<String> lista = new ListView<>(canciones);
+
+
+        Scene nueva = new Scene(general2,400,400);
+        Stage nuevo = new Stage();
+        nuevo.setScene(nueva);
+        nuevo.show();
     }
 }

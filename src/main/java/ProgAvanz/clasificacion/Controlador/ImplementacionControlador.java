@@ -1,29 +1,53 @@
 package ProgAvanz.clasificacion.Controlador;
 
-public class ImplementacionControlador implements Controlador{
+import ProgAvanz.clasificacion.Modelo.CambioModelo;
+import ProgAvanz.clasificacion.Modelo.ImplementacionModelo;
+import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
+import ProgAvanz.clasificacion.Vista.InterrogaVista;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.List;
+
+public class ImplementacionControlador implements Controlador {
+
+    CambioModelo modelo;
+    InterrogaVista vista;
+
+    public ImplementacionControlador(CambioModelo mod, InterrogaVista vis) {
+        modelo = mod;
+        vista = vis;
+    }
 
     @Override
     public void manhattan() {
-
+        modelo.manhattan();
     }
 
     @Override
     public void kmeans() {
-
+        modelo.kmeans();
     }
 
     @Override
     public void knn() {
-
+        modelo.knn();
     }
 
     @Override
     public void euclidea() {
-
+        modelo.euclidea();
     }
 
     @Override
-    public void recommend() {
-
+    public List<String> recommend(String cancion, int numero) throws IOException, URISyntaxException, LikedItemNotFoundException {
+        return modelo.recommend(cancion, numero);
     }
+
+    @Override
+    public void cambioPestaña() throws IOException, URISyntaxException {
+        modelo.cambioPestaña();
+    }
+
+
 }

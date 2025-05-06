@@ -17,24 +17,25 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
-    private String separator = System.getProperty("file.separator");
+
     private Algorithm algoritmo = null;
-    private Table tabla;
     private Distance tipo_distancia = null;
     private RecSys recomendaciones = null;
     private boolean isKNN = false;
+
+
+    private String separator = System.getProperty("file.separator");
     private TableWithLabels trainTable;
     private TableWithLabels dataTable;
     private List<String> namesData;
     private CSVLabeledFileReader reader;
-    // TODO: cambiar ruta si hace falta
     private String songsFolder = "recommender";
 
-    CSVLabeledFileReader reader_train = new CSVLabeledFileReader("songs_train.csv");
-
-    public ImplementacionModelo(){
+    public ImplementacionModelo() throws IOException, URISyntaxException {
+        trainTable = new TableWithLabels();
+        dataTable= new TableWithLabels();
+        namesData = readNames(songsFolder + separator + "songs_test_names.csv");
     }
-
     @Override
     public void manhattan() {
         tipo_distancia = new ManhattanDistance();
@@ -56,11 +57,21 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
         algoritmo = new KNN(tipo_distancia);
         isKNN = true;
     }
+    @Override
+    public List<String> recommend(String cancion, int nrecomendaciones) throws IOException, URISyntaxException, LikedItemNotFoundException {
+        return recomendaciones.recommend(cancion, nrecomendaciones );
 
-    public void recommend(String cancion, int nrecomendaciones) throws IOException, URISyntaxException, LikedItemNotFoundException {
-        setUp();
-        recomendaciones.recommend(cancion, nrecomendaciones );
     }
+    @Override
+    public void cambioPestaña() throws IOException, URISyntaxException {
+        setUp();
+    }
+
+    @Override
+    public List<String> tituloCanciones() {
+        return namesData;
+    }
+
     private void setUp() throws IOException, URISyntaxException {
         recomendaciones = new RecSys(algoritmo);
         if(isKNN){
@@ -71,6 +82,7 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
 
         }
     }
+
     private void setUpKMeans() throws IOException, URISyntaxException {
         reader = new CSVLabeledFileReader("songs_train_withoutnames.csv");
         trainTable = reader.readTableFromSource();
@@ -87,10 +99,6 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
         namesData = readNames(songsFolder + separator + "songs_test_names.csv");
     }
 
-    @Override
-    public List<String> tituloCanciones() {
-        return List.of();
-    }
     private List<String> readNames(String fileOfItemNames) throws IOException, URISyntaxException {
         String path = getClass().getClassLoader().getResource(fileOfItemNames).toURI().getPath();
 
