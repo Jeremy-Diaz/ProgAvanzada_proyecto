@@ -1,5 +1,6 @@
 package ProgAvanz.clasificacion.Modelo;
 
+import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 
 import java.io.IOException;
@@ -11,7 +12,9 @@ public interface CambioModelo {
     void kmeans();
     void knn();
     void euclidea();
-    List<String> recommend(String cancion, int nCanciones) throws IOException, URISyntaxException, LikedItemNotFoundException;
-    void cambioPestaña() throws IOException, URISyntaxException;
+    List<String> recommend(int nCanciones) throws IOException, URISyntaxException, LikedItemNotFoundException;
+    void cambioPestaña() throws IOException, URISyntaxException, InvalidClusterNumberException;
     List<String> tituloCanciones();
+    void setCancion(String cancion);
+    String getCancion();
 }

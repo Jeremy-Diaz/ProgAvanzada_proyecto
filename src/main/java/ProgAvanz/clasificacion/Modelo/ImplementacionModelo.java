@@ -4,6 +4,7 @@ import ProgAvanz.clasificacion.Modelo.Interfaces.Algorithm;
 import ProgAvanz.clasificacion.Modelo.Interfaces.Distance;
 import ProgAvanz.clasificacion.Modelo.algoritmos.KMeans;
 import ProgAvanz.clasificacion.Modelo.algoritmos.KNN;
+import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.Modelo.herramientas.*;
 import ProgAvanz.clasificacion.Modelo.tablas.Table;
@@ -16,12 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
+public class ImplementacionModelo implements CambioModelo {
 
     private Algorithm algoritmo = null;
     private Distance tipo_distancia = null;
     private RecSys recomendaciones = null;
     private boolean isKNN = false;
+    private String cancion_elegida;
 
 
     private String separator = System.getProperty("file.separator");
@@ -58,12 +60,12 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
         isKNN = true;
     }
     @Override
-    public List<String> recommend(String cancion, int nrecomendaciones) throws IOException, URISyntaxException, LikedItemNotFoundException {
-        return recomendaciones.recommend(cancion, nrecomendaciones );
+    public List<String> recommend( int nrecomendaciones) throws IOException, URISyntaxException, LikedItemNotFoundException {
+        return recomendaciones.recommend(cancion_elegida, nrecomendaciones );
 
     }
     @Override
-    public void cambioPestaña() throws IOException, URISyntaxException {
+    public void cambioPestaña() throws IOException, URISyntaxException, InvalidClusterNumberException {
         setUp();
     }
 
@@ -72,7 +74,17 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
         return namesData;
     }
 
-    private void setUp() throws IOException, URISyntaxException {
+    @Override
+    public String getCancion() {
+        return cancion_elegida;
+    }
+
+    @Override
+    public void setCancion(String cancion) {
+        cancion_elegida = cancion;
+    }
+
+    private void setUp() throws IOException, URISyntaxException, InvalidClusterNumberException {
         recomendaciones = new RecSys(algoritmo);
         if(isKNN){
             setUpKNN();
