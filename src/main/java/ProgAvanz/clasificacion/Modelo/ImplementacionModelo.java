@@ -93,6 +93,9 @@ public class ImplementacionModelo implements CambioModelo {
             setUpKMeans();
 
         }
+        recomendaciones.train(trainTable);
+        recomendaciones.initialise(dataTable,namesData);
+
     }
 
     private void setUpKMeans() throws IOException, URISyntaxException {

@@ -141,7 +141,7 @@ public class FXapp extends Application implements InterrogaVista {
         Label titulos_canciones  =new Label("Lista de canciones parecidas a "+ getCancion()+": ");
         ObservableList<String> canciones = FXCollections.observableArrayList(controlador.recommend(numero.getValue()));
         ListView<String> lista = new ListView<>(canciones);
-        
+
         bloque_canciones.getChildren().addAll(titulos_canciones,lista);
         general2.getChildren().addAll(recomendaciones, bloque_canciones);
         Scene nueva = new Scene(general2,400,400);

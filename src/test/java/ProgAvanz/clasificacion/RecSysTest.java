@@ -48,7 +48,6 @@ class RecSysTest {
 
     @Nested
     class KNNRecSys {
-
         @BeforeEach
             // TODO: añadir o eliminar excepciones según tu implementación
         void setUp() throws IOException, URISyntaxException, InvalidClusterNumberException {
