@@ -4,7 +4,6 @@ import ProgAvanz.clasificacion.Modelo.Interfaces.Algorithm;
 import ProgAvanz.clasificacion.Modelo.Interfaces.Distance;
 import ProgAvanz.clasificacion.Modelo.algoritmos.KMeans;
 import ProgAvanz.clasificacion.Modelo.algoritmos.KNN;
-import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.Modelo.herramientas.*;
 import ProgAvanz.clasificacion.Modelo.tablas.Table;
@@ -65,7 +64,7 @@ public class ImplementacionModelo implements CambioModelo {
 
     }
     @Override
-    public void cambioPestaña() throws IOException, URISyntaxException, InvalidClusterNumberException {
+    public void cambioPestaña() throws IOException, URISyntaxException {
         setUp();
     }
 
@@ -84,7 +83,7 @@ public class ImplementacionModelo implements CambioModelo {
         cancion_elegida = cancion;
     }
 
-    private void setUp() throws IOException, URISyntaxException, InvalidClusterNumberException {
+    private void setUp() throws IOException, URISyntaxException {
         recomendaciones = new RecSys(algoritmo);
         if(isKNN){
             setUpKNN();
@@ -93,9 +92,6 @@ public class ImplementacionModelo implements CambioModelo {
             setUpKMeans();
 
         }
-        recomendaciones.train(trainTable);
-        recomendaciones.initialise(dataTable,namesData);
-
     }
 
     private void setUpKMeans() throws IOException, URISyntaxException {
@@ -126,3 +122,4 @@ public class ImplementacionModelo implements CambioModelo {
         return names;
     }
 }
+

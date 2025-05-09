@@ -2,7 +2,6 @@ package ProgAvanz.clasificacion.Controlador;
 
 import ProgAvanz.clasificacion.Modelo.CambioModelo;
 import ProgAvanz.clasificacion.Modelo.ImplementacionModelo;
-import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.Vista.InterrogaVista;
 
@@ -46,7 +45,7 @@ public class ImplementacionControlador implements Controlador {
     }
 
     @Override
-    public void cambioPestaña() throws IOException, URISyntaxException, InvalidClusterNumberException {
+    public void cambioPestaña() throws IOException, URISyntaxException {
         modelo.cambioPestaña();
     }
 
@@ -57,3 +56,4 @@ public class ImplementacionControlador implements Controlador {
 
 
 }
+

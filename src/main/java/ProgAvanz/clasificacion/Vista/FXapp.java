@@ -4,7 +4,6 @@ import ProgAvanz.clasificacion.Controlador.Controlador;
 import ProgAvanz.clasificacion.Controlador.ImplementacionControlador;
 import ProgAvanz.clasificacion.Modelo.CambioModelo;
 import ProgAvanz.clasificacion.Modelo.ImplementacionModelo;
-import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
@@ -105,8 +104,6 @@ public class FXapp extends Application implements InterrogaVista {
                 throw new RuntimeException(e);
             } catch (LikedItemNotFoundException e) {
                 throw new RuntimeException(e);
-            } catch (InvalidClusterNumberException e) {
-                throw new RuntimeException(e);
             }
         });
         cambioPestaña.getChildren().addAll(cambio);
@@ -128,13 +125,14 @@ public class FXapp extends Application implements InterrogaVista {
     public String getCancion() {
         return modelo.getCancion();
     }
-    private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException, InvalidClusterNumberException {
-       controlador.cambioPestaña();
+    private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException {
+        controlador.cambioPestaña();
         VBox general2 = new VBox();
         Label numeroRecomendaciones = new Label("Numero de recomendaciones: ");
         Spinner<Integer> numero = new Spinner<>(1,tituloCanciones().size(),1);
 
         HBox recomendaciones = new HBox(numeroRecomendaciones,numero);
+        general2.getChildren().addAll(recomendaciones);
 
         VBox bloque_canciones = new VBox();
 
@@ -142,8 +140,7 @@ public class FXapp extends Application implements InterrogaVista {
         ObservableList<String> canciones = FXCollections.observableArrayList(controlador.recommend(numero.getValue()));
         ListView<String> lista = new ListView<>(canciones);
 
-        bloque_canciones.getChildren().addAll(titulos_canciones,lista);
-        general2.getChildren().addAll(recomendaciones, bloque_canciones);
+
         Scene nueva = new Scene(general2,400,400);
         Stage nuevo = new Stage();
         nuevo.setScene(nueva);

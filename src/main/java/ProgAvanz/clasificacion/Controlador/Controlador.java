@@ -1,6 +1,5 @@
 package ProgAvanz.clasificacion.Controlador;
 
-import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 
 import java.io.IOException;
@@ -18,7 +17,7 @@ public interface Controlador {
 
     List<String> recommend( int numero ) throws IOException, URISyntaxException, LikedItemNotFoundException;
 
-    void cambioPestaña() throws IOException, URISyntaxException, InvalidClusterNumberException;
+    void cambioPestaña() throws IOException, URISyntaxException;
 
     void setCancion(String cancion);
 }

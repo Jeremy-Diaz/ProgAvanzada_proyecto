@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="ponerlo bonito y que sirva el recomend">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Controlador/Controlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Controlador/Controlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Controlador/ImplementacionControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Controlador/ImplementacionControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Modelo/CambioModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Modelo/CambioModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Modelo/ImplementacionModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Modelo/ImplementacionModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Vista/FXapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Vista/FXapp.java" afterDir="false" />
-    </list>
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="en este si van los test" />
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
-    <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Modelo/ImplementacionModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Modelo/ImplementacionModelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ProgAvanz/clasificacion/RecSysTest.java" afterDir="false" />
-    </list>
+    <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="x2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,20 +36,6 @@
     &quot;accountId&quot;: &quot;f96d1055-cd73-4177-b0b7-248acff0175e&quot;
   }
 }</component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Modelo/ImplementacionModelo.java">
-      <ranges>
-        <range start1="6" end1="6" start2="6" end2="7" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="18" end1="19" start2="19" end2="20" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="24" end1="24" start2="25" end2="26" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="60" end1="62" start2="62" end2="64" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="65" end1="66" start2="67" end2="68" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="72" end1="72" start2="74" end2="84" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="74" end1="75" start2="86" end2="87" changelist="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" />
-        <range start1="83" end1="83" start2="95" end2="98" changelist="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" />
-      </ranges>
-    </file>
-  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -286,7 +262,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746527662865</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="en este si van los test">
+      <option name="closed" value="true" />
+      <created>1746800424780</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746800424780</updated>
+    </task>
+    <task id="LOCAL-00011" summary="en este si van los test">
+      <option name="closed" value="true" />
+      <created>1746800480445</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746800480445</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -299,7 +291,9 @@
     <MESSAGE value="push" />
     <MESSAGE value="Acabado apartado 3" />
     <MESSAGE value="ponerlo bonito y que sirva el recomend" />
-    <option name="LAST_COMMIT_MESSAGE" value="ponerlo bonito y que sirva el recomend" />
+    <MESSAGE value="x2" />
+    <MESSAGE value="en este si van los test" />
+    <option name="LAST_COMMIT_MESSAGE" value="en este si van los test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
