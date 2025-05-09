@@ -16,12 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
+public class ImplementacionModelo implements CambioModelo {
 
     private Algorithm algoritmo = null;
     private Distance tipo_distancia = null;
     private RecSys recomendaciones = null;
     private boolean isKNN = false;
+    private String cancion_elegida;
 
 
     private String separator = System.getProperty("file.separator");
@@ -58,8 +59,8 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
         isKNN = true;
     }
     @Override
-    public List<String> recommend(String cancion, int nrecomendaciones) throws IOException, URISyntaxException, LikedItemNotFoundException {
-        return recomendaciones.recommend(cancion, nrecomendaciones );
+    public List<String> recommend( int nrecomendaciones) throws IOException, URISyntaxException, LikedItemNotFoundException {
+        return recomendaciones.recommend(cancion_elegida, nrecomendaciones );
 
     }
     @Override
@@ -70,6 +71,16 @@ public class ImplementacionModelo implements CambioModelo,InterrogaModelo {
     @Override
     public List<String> tituloCanciones() {
         return namesData;
+    }
+
+    @Override
+    public String getCancion() {
+        return cancion_elegida;
+    }
+
+    @Override
+    public void setCancion(String cancion) {
+         cancion_elegida = cancion;
     }
 
     private void setUp() throws IOException, URISyntaxException {

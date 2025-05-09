@@ -40,13 +40,18 @@ public class ImplementacionControlador implements Controlador {
     }
 
     @Override
-    public List<String> recommend(String cancion, int numero) throws IOException, URISyntaxException, LikedItemNotFoundException {
-        return modelo.recommend(cancion, numero);
+    public List<String> recommend( int numero) throws IOException, URISyntaxException, LikedItemNotFoundException {
+        return modelo.recommend(numero);
     }
 
     @Override
     public void cambioPestaña() throws IOException, URISyntaxException {
         modelo.cambioPestaña();
+    }
+
+    @Override
+    public void setCancion(String cancion) {
+        modelo.setCancion(cancion);
     }
 
 

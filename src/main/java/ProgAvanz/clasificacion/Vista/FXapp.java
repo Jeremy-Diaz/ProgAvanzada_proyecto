@@ -4,12 +4,11 @@ import ProgAvanz.clasificacion.Controlador.Controlador;
 import ProgAvanz.clasificacion.Controlador.ImplementacionControlador;
 import ProgAvanz.clasificacion.Modelo.CambioModelo;
 import ProgAvanz.clasificacion.Modelo.ImplementacionModelo;
-import ProgAvanz.clasificacion.Modelo.InterrogaModelo;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import javafx.application.Application;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
@@ -20,10 +19,9 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-public class FXapp extends Application implements InterrogaVista, InterrogaModelo {
+public class FXapp extends Application implements InterrogaVista {
     private CambioModelo modelo = new ImplementacionModelo();
     private Controlador controlador = new ImplementacionControlador(modelo,this);
-    private String cancion = "";
     public FXapp() throws IOException, URISyntaxException {
     }
 
@@ -41,11 +39,16 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
         VBox kmeans_euclidean = new VBox(5);
 
         Label recomendacion = new Label("Tipo de recomendación");
-        Label distancia = new Label("Tipo de recomendacion");
-        RadioButton seleccion_tipo_recomendacion_1 = new RadioButton("KNN");
-        RadioButton seleccion_tipo_recomendacion_2 = new RadioButton("K_MEANS");
+        Label distancia = new Label("Tipo de distancia");
         RadioButton seleccion_tipo_distancia_1 = new RadioButton("Manhattan");
+        seleccion_tipo_distancia_1.setOnAction(EventHandler -> controlador.manhattan());
         RadioButton seleccion_tipo_distancia_2 = new RadioButton("Euclidea");
+        seleccion_tipo_distancia_2.setOnAction(EventHandler -> controlador.euclidea());
+        RadioButton seleccion_tipo_recomendacion_1 = new RadioButton("KNN");
+        seleccion_tipo_recomendacion_1.setOnAction(EventHandler -> controlador.knn());
+
+        RadioButton seleccion_tipo_recomendacion_2 = new RadioButton("K_MEANS");
+        seleccion_tipo_recomendacion_2.setOnAction(EventHandler -> controlador.kmeans());
 
         ToggleGroup grupo_radio_recomendacion = new ToggleGroup();
 
@@ -53,9 +56,11 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
         seleccion_tipo_recomendacion_2.setToggleGroup(grupo_radio_recomendacion);
 
         ToggleGroup grupo_radio_distancia = new ToggleGroup();
-
-        seleccion_tipo_distancia_1.setToggleGroup(grupo_radio_distancia);
+        seleccion_tipo_distancia_1.setToggleGroup(grupo_radio_distancia);// ahora me meto
         seleccion_tipo_distancia_2.setToggleGroup(grupo_radio_distancia);
+
+        seleccion_tipo_recomendacion_1.disableProperty().bind(grupo_radio_distancia.selectedToggleProperty().isNull());
+        seleccion_tipo_recomendacion_2.disableProperty().bind(grupo_radio_distancia.selectedToggleProperty().isNull());
 
         HBox bloque_recomendacion_distancia = new HBox(15);
 
@@ -74,7 +79,7 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
         ListView<String> lista = new ListView<>(canciones);
 
         lista.getSelectionModel().selectedItemProperty().addListener((item,valorInicial,valorActual) -> {
-            cancion = valorActual;
+            controlador.setCancion(valorActual);
         });
 
         bloque_canciones.getChildren().addAll(titulos_canciones,lista);
@@ -83,6 +88,13 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
 
         HBox cambioPestaña = new HBox();
         Button cambio = new Button("Recomendar");
+        cambio.disableProperty().bind(
+                Bindings.or(
+                        lista.getSelectionModel().selectedItemProperty().isNull(),
+                        grupo_radio_distancia.selectedToggleProperty().isNull())
+                        .or(grupo_radio_recomendacion.selectedToggleProperty().isNull())
+        );
+
         cambio.setOnAction(actionEvent -> {
             try {
                 nuevaVentana();
@@ -98,25 +110,20 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
 
         general.getChildren().addAll(bloque_recomendacion_distancia,bloque_canciones,cambioPestaña);
 
-        stagePrimario.setTitle("Recomendadorneitor 3000");
+        stagePrimario.setTitle("Recomendar canciones");
         stagePrimario.setScene(new Scene(general, 400, 400));
         stagePrimario.show();
-
-
-
 
     }
 
 
-
-    @Override
     public List<String> tituloCanciones() {
         return modelo.tituloCanciones();
     }
 
     @Override
     public String getCancion() {
-        return "";
+         return modelo.getCancion();
     }
     private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException {
         controlador.cambioPestaña();
@@ -129,8 +136,8 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
 
         VBox bloque_canciones = new VBox();
 
-        Label titulos_canciones  =new Label("Lista de canciones parecidas a "+cancion+": ");
-        ObservableList<String> canciones = FXCollections.observableArrayList(controlador.recommend(cancion,numero.getValue()));
+        Label titulos_canciones  =new Label("Lista de canciones parecidas a "+ getCancion()+": ");
+        ObservableList<String> canciones = FXCollections.observableArrayList(controlador.recommend(numero.getValue()));
         ListView<String> lista = new ListView<>(canciones);
 
 
@@ -140,3 +147,71 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
         nuevo.show();
     }
 }
+
+/*import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+        import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+
+public class SinBindSinRunnable extends Application {
+
+    private ToggleGroup grupoDireccion = new ToggleGroup();
+    private ToggleGroup grupoVelocidad = new ToggleGroup();
+    private ListView<String> lista = new ListView<>();
+    private Button elegir = new Button("Elegir");
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        // RadioButtons para dirección
+        RadioButton izquierda = new RadioButton("Izquierda");
+        RadioButton derecha = new RadioButton("Derecha");
+        izquierda.setToggleGroup(grupoDireccion);
+        derecha.setToggleGroup(grupoDireccion);
+
+        // RadioButtons para velocidad
+        RadioButton lento = new RadioButton("Lento");
+        RadioButton rapido = new RadioButton("Rápido");
+        lento.setToggleGroup(grupoVelocidad);
+        rapido.setToggleGroup(grupoVelocidad);
+
+        // Lista
+        lista.setItems(FXCollections.observableArrayList("Opción A", "Opción B", "Opción C"));
+        lista.setMaxHeight(100);
+
+        // Botón
+        elegir.setDisable(true); // desactivado por defecto
+
+        // Listeners
+        grupoDireccion.selectedToggleProperty().addListener((obs, oldVal, newVal) -> verificarCondiciones());
+        grupoVelocidad.selectedToggleProperty().addListener((obs, oldVal, newVal) -> verificarCondiciones());
+        lista.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> verificarCondiciones());
+
+        elegir.setOnAction(e -> {
+            RadioButton dir = (RadioButton) grupoDireccion.getSelectedToggle();
+            RadioButton vel = (RadioButton) grupoVelocidad.getSelectedToggle();
+            String opcion = lista.getSelectionModel().getSelectedItem();
+            System.out.println("Elegiste: " + dir.getText() + ", " + vel.getText() + ", " + opcion);
+        });
+
+        VBox root = new VBox(10, izquierda, derecha, lento, rapido, new Label("Selecciona una opción:"), lista, elegir);
+        Scene scene = new Scene(root, 300, 400);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("JavaFX sin Runnable ni bind()");
+        primaryStage.show();
+    }
+
+    private void verificarCondiciones() {
+        boolean direccionOK = grupoDireccion.getSelectedToggle() != null;
+        boolean velocidadOK = grupoVelocidad.getSelectedToggle() != null;
+        boolean listaOK = lista.getSelectionModel().getSelectedItem() != null;
+
+        elegir.setDisable(!(direccionOK && velocidadOK && listaOK));
+    }
+}
+*/
