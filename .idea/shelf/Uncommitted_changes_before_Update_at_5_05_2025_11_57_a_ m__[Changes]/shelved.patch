@@ -1,0 +1,63 @@
+Index: src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ProgAvanz.clasificacion.algoritmos;\r\nimport ProgAvanz.clasificacion.Interfaces.Algorithm;\r\nimport ProgAvanz.clasificacion.Interfaces.Distance;\r\nimport ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;\r\nimport ProgAvanz.clasificacion.herramientas.Distancias;\r\nimport ProgAvanz.clasificacion.herramientas.EuclideanDIstance;\r\nimport ProgAvanz.clasificacion.tablas.Row;\r\nimport ProgAvanz.clasificacion.tablas.Table;\r\n\r\nimport java.util.*;\r\n\r\npublic class KMeans implements Algorithm<Table, Integer, List<Double>> {\r\n    private int nClusters;\r\n    private int nIterations;\r\n    private long seed;\r\n    private Map<Row,List<Row>> groups;\r\n    private List<Row> centroides;\r\n    private Set<Integer> valores_random;\r\n    private Distance distancia;\r\n\r\n    public KMeans(int numClusters, int numIterations, long seed){\r\n\r\n        nClusters = numClusters;\r\n        nIterations = numIterations;\r\n        this.seed = seed;\r\n        groups = new HashMap<>();\r\n        centroides = new ArrayList<>();\r\n        distancia = new EuclideanDIstance();\r\n    }\r\n\r\n    public KMeans(int numClusters, int numIterations, long seed, Distance type_distance){\r\n\r\n        nClusters = numClusters;\r\n        nIterations = numIterations;\r\n        this.seed = seed;\r\n        groups = new HashMap<>();\r\n        centroides = new ArrayList<>();\r\n        distancia = type_distance;\r\n    }\r\n\r\n    public void train(Table data) throws InvalidClusterNumberException {\r\n        if (nClusters > data.getRowCount())\r\n            throw new InvalidClusterNumberException(nClusters);\r\n        Random numRandom = new Random(seed);\r\n        Distancias dis = new Distancias();\r\n\r\n        for (int i = 0; i < nClusters; i++) {\r\n            int random = numRandom.nextInt(0, data.getRowCount() - 1);\r\n            Row fila_representante = data.getRowAt(random);\r\n            centroides.add(fila_representante);\r\n            groups.put(fila_representante, new LinkedList<>());\r\n\r\n        }\r\n\r\n        for (int i = 0; i < nIterations; i++) {\r\n            for (Row fila : data.getRows()) {\r\n                double distancia_minima = dis.getDistanciaEuclides(fila.getData(), centroides.get(0).getData());\r\n                Row representante_mas_cercano = centroides.get(0);\r\n                for (int j = 1; j < centroides.size(); j++) {\r\n                    double distancia = dis.getDistanciaEuclides(fila.getData(), centroides.get(j).getData());\r\n                    if (distancia < distancia_minima) {\r\n                        distancia_minima = distancia;\r\n                        representante_mas_cercano = centroides.get(j);\r\n                    }\r\n                }\r\n                groups.get(representante_mas_cercano).add(fila);\r\n            }\r\n\r\n\r\n\r\n\r\n            List<Double> datos_centroide_nuevo = new LinkedList<>();\r\n\r\n            for (Row representante : centroides) {\r\n                for (int k = 0; k < representante.getData().size(); k++) {\r\n                    List<Double> lista_columna = new LinkedList<>();\r\n                    for (Row elemento : groups.get(representante)) {\r\n                        lista_columna.add(elemento.getData().get(k));\r\n                    }\r\n                    datos_centroide_nuevo.add(mean(lista_columna));\r\n                }\r\n                groups.remove(representante);\r\n                groups.put(new Row(datos_centroide_nuevo),new LinkedList<>());\r\n                datos_centroide_nuevo = new LinkedList<>();\r\n            }\r\n            centroides.clear();\r\n            centroides.addAll(groups.keySet());\r\n        }\r\n    }\r\n\r\n    public Integer estimate (List < Double > sample) {\r\n        Distancias dis = new Distancias();\r\n        double distancia_mas_cercana = dis.getDistanciaEuclides(centroides.get(0).getData(), sample);\r\n        int grupo_mas_cercano = 0;\r\n        for(int i = 1; i < centroides.size(); i++){\r\n            double distanc=distancia.calculateDistance(centroides.get(i).getData(),sample);\r\n            if (distanc <= distancia_mas_cercana ){\r\n                distancia_mas_cercana = distanc;\r\n                grupo_mas_cercano = i;\r\n            }\r\n        }\r\n        return grupo_mas_cercano;\r\n    }\r\n\r\n    public double mean (List < Double > lista) {\r\n        double suma = 0;\r\n        for (int i = 0; i < lista.size(); i++)\r\n            suma += lista.get(i);\r\n        return suma / lista.size();\r\n    }\r\n}
+===================================================================
+diff --git a/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java b/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java
+--- a/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java	(revision bad396888b5d424bb15d5b5d23162d642b051e3f)
++++ b/src/main/java/ProgAvanz/clasificacion/algoritmos/KMeans.java	(date 1744190437515)
+@@ -1,22 +1,18 @@
+ package ProgAvanz.clasificacion.algoritmos;
+-import ProgAvanz.clasificacion.Interfaces.Algorithm;
+-import ProgAvanz.clasificacion.Interfaces.Distance;
+ import ProgAvanz.clasificacion.excepciones.InvalidClusterNumberException;
+ import ProgAvanz.clasificacion.herramientas.Distancias;
+-import ProgAvanz.clasificacion.herramientas.EuclideanDIstance;
+ import ProgAvanz.clasificacion.tablas.Row;
+ import ProgAvanz.clasificacion.tablas.Table;
+ 
+ import java.util.*;
+ 
+-public class KMeans implements Algorithm<Table, Integer, List<Double>> {
++public class KMeans implements Algorithm<Table, Integer, List<Double>>{
+     private int nClusters;
+     private int nIterations;
+     private long seed;
+     private Map<Row,List<Row>> groups;
+     private List<Row> centroides;
+     private Set<Integer> valores_random;
+-    private Distance distancia;
+ 
+     public KMeans(int numClusters, int numIterations, long seed){
+ 
+@@ -25,17 +21,6 @@
+         this.seed = seed;
+         groups = new HashMap<>();
+         centroides = new ArrayList<>();
+-        distancia = new EuclideanDIstance();
+-    }
+-
+-    public KMeans(int numClusters, int numIterations, long seed, Distance type_distance){
+-
+-        nClusters = numClusters;
+-        nIterations = numIterations;
+-        this.seed = seed;
+-        groups = new HashMap<>();
+-        centroides = new ArrayList<>();
+-        distancia = type_distance;
+     }
+ 
+     public void train(Table data) throws InvalidClusterNumberException {
+@@ -93,9 +78,9 @@
+         double distancia_mas_cercana = dis.getDistanciaEuclides(centroides.get(0).getData(), sample);
+         int grupo_mas_cercano = 0;
+         for(int i = 1; i < centroides.size(); i++){
+-            double distanc=distancia.calculateDistance(centroides.get(i).getData(),sample);
+-            if (distanc <= distancia_mas_cercana ){
+-                distancia_mas_cercana = distanc;
++            double distancia = dis.getDistanciaEuclides(centroides.get(i).getData(),sample);
++            if (distancia <= distancia_mas_cercana ){
++                distancia_mas_cercana = distancia;
+                 grupo_mas_cercano = i;
+             }
+         }
