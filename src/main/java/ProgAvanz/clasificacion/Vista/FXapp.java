@@ -11,10 +11,11 @@ import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -35,21 +36,28 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
     public void start(Stage stagePrimario)  {
 
         VBox general = new VBox(10);
-
+        general.setStyle("-fx-background-color: #282B30");
+        BorderPane general2= new BorderPane();
         VBox rec_dis = new VBox(5);
         VBox knn_manhattan = new VBox(5);
         VBox kmeans_euclidean = new VBox(5);
 
         Label recomendacion = new Label("Tipo de recomendación");
+        recomendacion.setStyle("-fx-text-fill: #EAEAEA;-fx-font-size: 16px");
         Label distancia = new Label("Tipo de distancia");
+        distancia.setStyle("-fx-text-fill: #EAEAEA;-fx-font-size: 16px");
         RadioButton seleccion_tipo_distancia_1 = new RadioButton("Manhattan");
+        seleccion_tipo_distancia_1.setStyle("-fx-text-fill: #EAEAEA");
         seleccion_tipo_distancia_1.setOnAction(EventHandler -> controlador.manhattan());
         RadioButton seleccion_tipo_distancia_2 = new RadioButton("Euclidea");
+        seleccion_tipo_distancia_2.setStyle("-fx-text-fill: #EAEAEA");
         seleccion_tipo_distancia_2.setOnAction(EventHandler -> controlador.euclidea());
         RadioButton seleccion_tipo_recomendacion_1 = new RadioButton("KNN");
+        seleccion_tipo_recomendacion_1.setStyle("-fx-text-fill: #EAEAEA");
         seleccion_tipo_recomendacion_1.setOnAction(EventHandler -> controlador.knn());
 
         RadioButton seleccion_tipo_recomendacion_2 = new RadioButton("K_MEANS");
+        seleccion_tipo_recomendacion_2.setStyle("-fx-text-fill: #EAEAEA");
         seleccion_tipo_recomendacion_2.setOnAction(EventHandler -> controlador.kmeans());
 
         ToggleGroup grupo_radio_recomendacion = new ToggleGroup();
@@ -66,33 +74,43 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
 
         HBox bloque_recomendacion_distancia = new HBox(15);
 
-        rec_dis.getChildren().addAll(recomendacion,distancia);
-        knn_manhattan.getChildren().addAll(seleccion_tipo_recomendacion_1,seleccion_tipo_distancia_1);
-        kmeans_euclidean.getChildren().addAll(seleccion_tipo_recomendacion_2,seleccion_tipo_distancia_2);
+        rec_dis.getChildren().addAll(distancia, recomendacion);
+        knn_manhattan.getChildren().addAll(seleccion_tipo_distancia_1,seleccion_tipo_recomendacion_1);
+        kmeans_euclidean.getChildren().addAll(seleccion_tipo_distancia_2, seleccion_tipo_recomendacion_2);
 
 
         bloque_recomendacion_distancia.getChildren().addAll(rec_dis,knn_manhattan,kmeans_euclidean);
 
-        //canciones
+        //canciones + recomnedacion
         VBox bloque_canciones = new VBox();
+        VBox.setVgrow(bloque_canciones, Priority.ALWAYS);
 
-        Label titulos_canciones  =new Label("Titulos de canciones");
+        Label titulos_canciones  = new Label("Titulos de canciones");
+        titulos_canciones.setStyle("-fx-text-fill: #EAEAEA;-fx-font-size: 20px");
         ObservableList<String> canciones = FXCollections.observableArrayList(tituloCanciones());
-        //busqueda
         FilteredList<String> lista_filtrada = new FilteredList<>(canciones, s -> true);
-        ListView<String> lista = new ListView<>(canciones);
-
+        ListView<String> lista = new ListView<>(lista_filtrada);
+        lista.setStyle("-fx-background-color: #1e2124");
         TextField buscador = new TextField();
         buscador.setPromptText("Buscar una canción...");
-        buscador.textProperty().addListener((item, valorInicial, valorActual) -> {
-            lista_filtrada.setPredicate(item -> );
+        buscador.textProperty().addListener((elem, valorInicial, valorActual) -> {
+            lista_filtrada.setPredicate(item -> {
+                if (valorActual == null || valorActual.isEmpty()){ return true;}
+                String lower = valorActual.toLowerCase();
+                return item.toLowerCase().contains(lower);
+            });
         });
         lista.getSelectionModel().selectedItemProperty().addListener((item,valorInicial,valorActual) -> {
             controlador.setCancion(valorActual);
         });
 
 
-        bloque_canciones.getChildren().addAll(titulos_canciones,lista);
+        BorderPane etiqueta_busqueda = new BorderPane();
+        etiqueta_busqueda.setRight(buscador);
+        etiqueta_busqueda.setLeft(titulos_canciones);
+
+
+        bloque_canciones.getChildren().addAll(etiqueta_busqueda,lista);
         // boton aplicar y boton cambio de pagina
 
         HBox cambioPestaña = new HBox();
@@ -120,9 +138,11 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
         cambioPestaña.getChildren().addAll(cambio);
 
         general.getChildren().addAll(bloque_recomendacion_distancia,bloque_canciones,cambioPestaña);
+        VBox.setVgrow(lista, Priority.ALWAYS);
 
         stagePrimario.setTitle("Recomendar canciones");
-        stagePrimario.setScene(new Scene(general, 400, 400));
+        stagePrimario.setScene(new Scene(general, 500, 400));
+
         stagePrimario.show();
 
     }
@@ -144,7 +164,9 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
     private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException, InvalidClusterNumberException {
         controlador.cambioPestaña();
         VBox general2 = new VBox();
+        general2.setStyle("-fx-background-color: #282B30");
         Label numeroRecomendaciones = new Label("Numero de recomendaciones: ");
+        numeroRecomendaciones.setStyle("-fx-text-fill: #EAEAEA;-fx-font-size: 16px");
 
 
         VBox bloque_canciones = new VBox();
@@ -156,6 +178,7 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
 
 
         Label titulos_canciones  =new Label("Lista de canciones parecidas a "+ getCancion()+": ");
+        titulos_canciones.setStyle("-fx-text-fill: #EAEAEA;-fx-font-size: 20px");
         ObservableList<String> cancionesVisibles = FXCollections.observableArrayList();
         ListView<String> lista = new ListView<>(cancionesVisibles);
         numero.valueProperty().addListener((obs, anterior, nuevo) -> actualizarLista(nuevo, cancionesVisibles, todasCanciones ));
@@ -163,7 +186,7 @@ public class FXapp extends Application implements InterrogaVista, InterrogaModel
         bloque_canciones.getChildren().addAll(titulos_canciones,lista);
 
         general2.getChildren().addAll(recomendaciones, bloque_canciones);
-        Scene nueva = new Scene(general2,400,400);
+        Scene nueva = new Scene(general2,500,400);
         Stage nuevo = new Stage();
         nuevo.setScene(nueva);
         nuevo.show();
