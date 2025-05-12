@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="en este si van los test" />
+    <list default="true" id="e8f1e6e5-8311-40fd-b9c8-3043f7b00c03" name="Changes" comment="Version final.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Vista/ImplementacionVista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Vista/FXapp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Vista/FXapp.java" afterDir="false" />
+    </list>
     <list id="0472478b-74ac-4984-842f-9cd0723c4a3e" name="Changes by al435564" comment="" />
     <list id="3cae7bfc-08fb-47b7-9fb2-ff2cb73fe2c2" name="Changes by ikerf" comment="x2" />
+    <list id="c3948d3d-8897-4e95-a8da-d02edbaea285" name="Changes by jerem" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -50,42 +54,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.SongRecSys.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in ProgAvanzada.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CSVLabeledFileReaderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CSVTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CSVTest.readTable.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CSVUnlabeledFileReaderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.KMeansTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.KNNTest.estimate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.KNNTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RecSysTest$KMeansRecSys.estimate.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RecSysTest$KMeansRecSys.estimate_likedItemNotInRecommendation.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RecSysTest$KNNRecSys.estimate.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RecSysTest$KNNRecSys.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RecSysTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TableTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TableTest.getHeaders.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TableTest.rowCount.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TableWithLabelsTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TableWithLabelsTest.getLabelAsInteger.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TableWithLabelsTest.getRowAt.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.ProgAvanzada [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/home/al438643/IdeaProjects/ProgAvanzada/src/main/java/ProgAvanz/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.SongRecSys.executor": "Run",
+    "JUnit.All in ProgAvanzada.executor": "Run",
+    "JUnit.CSVLabeledFileReaderTest.executor": "Run",
+    "JUnit.CSVTest.executor": "Run",
+    "JUnit.CSVTest.readTable.executor": "Run",
+    "JUnit.CSVUnlabeledFileReaderTest.executor": "Run",
+    "JUnit.KMeansTest.executor": "Run",
+    "JUnit.KNNTest.estimate.executor": "Run",
+    "JUnit.KNNTest.executor": "Run",
+    "JUnit.RecSysTest$KMeansRecSys.estimate.executor": "Debug",
+    "JUnit.RecSysTest$KMeansRecSys.estimate_likedItemNotInRecommendation.executor": "Run",
+    "JUnit.RecSysTest$KNNRecSys.estimate.executor": "Debug",
+    "JUnit.RecSysTest$KNNRecSys.executor": "Run",
+    "JUnit.RecSysTest.executor": "Run",
+    "JUnit.TableTest.executor": "Run",
+    "JUnit.TableTest.getHeaders.executor": "Run",
+    "JUnit.TableTest.rowCount.executor": "Run",
+    "JUnit.TableWithLabelsTest.executor": "Run",
+    "JUnit.TableWithLabelsTest.getLabelAsInteger.executor": "Run",
+    "JUnit.TableWithLabelsTest.getRowAt.executor": "Run",
+    "Maven.ProgAvanzada [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/al435564/IdeaProjects/ProgAvanzada_pro/src/main/resources",
+    "onboarding.tips.debug.path": "/home/al438643/IdeaProjects/ProgAvanzada/src/main/java/ProgAvanz/Main.java",
+    "settings.editor.selected.configurable": "settings.sync"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="ProgAvanz.clasificar_flores" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -278,7 +286,39 @@
       <option name="project" value="LOCAL" />
       <updated>1746800480445</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="porque va?">
+      <option name="closed" value="true" />
+      <created>1747047207335</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747047207335</updated>
+    </task>
+    <task id="LOCAL-00013" summary="nos aacercamos">
+      <option name="closed" value="true" />
+      <created>1747059388868</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747059388868</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Version final??">
+      <option name="closed" value="true" />
+      <created>1747066296524</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1747066296524</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Version final.">
+      <option name="closed" value="true" />
+      <created>1747067348159</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1747067348159</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -293,7 +333,11 @@
     <MESSAGE value="ponerlo bonito y que sirva el recomend" />
     <MESSAGE value="x2" />
     <MESSAGE value="en este si van los test" />
-    <option name="LAST_COMMIT_MESSAGE" value="en este si van los test" />
+    <MESSAGE value="porque va?" />
+    <MESSAGE value="nos aacercamos" />
+    <MESSAGE value="Version final??" />
+    <MESSAGE value="Version final." />
+    <option name="LAST_COMMIT_MESSAGE" value="Version final." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -307,6 +351,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/TableWithLabelsTest.java</url>
           <line>101</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ProgAvanz/clasificacion/Vista/FXapp.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

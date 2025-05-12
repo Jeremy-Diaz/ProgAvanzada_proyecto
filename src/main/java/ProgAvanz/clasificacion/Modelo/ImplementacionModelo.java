@@ -7,8 +7,8 @@ import ProgAvanz.clasificacion.Modelo.algoritmos.KNN;
 import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.Modelo.herramientas.*;
-import ProgAvanz.clasificacion.Modelo.tablas.Table;
 import ProgAvanz.clasificacion.Modelo.tablas.TableWithLabels;
+import ProgAvanz.clasificacion.Vista.InformaVista;
 import ProgAvanz.clasificacion.Vista.InterrogaModelo;
 
 import java.io.File;
@@ -18,13 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ImplementacionModelo implements CambioModelo, InterrogaModelo {
+public class ImplementacionModelo implements CambioModelo, InterrogaModelo{
 
     private Algorithm algoritmo = null;
     private Distance tipo_distancia = null;
     private RecSys recomendaciones = null;
     private boolean isKNN = false;
-    private String cancion_elegida;
+    private String cancion_elegida = null;
 
 
     private String separator = System.getProperty("file.separator");
@@ -33,12 +33,18 @@ public class ImplementacionModelo implements CambioModelo, InterrogaModelo {
     private List<String> namesData;
     private CSVLabeledFileReader reader;
     private String songsFolder = "recommender";
-
+    private InformaVista vista;
     public ImplementacionModelo() throws IOException, URISyntaxException {
         trainTable = new TableWithLabels();
         dataTable= new TableWithLabels();
         namesData = readNames(songsFolder + separator + "songs_test_names.csv");
     }
+
+    @Override
+    public void setVista(InformaVista vi) {
+        vista = vi;
+    }
+
     @Override
     public void manhattan() {
         tipo_distancia = new ManhattanDistance();
@@ -85,6 +91,7 @@ public class ImplementacionModelo implements CambioModelo, InterrogaModelo {
     @Override
     public void setCancion(String cancion) {
         cancion_elegida = cancion;
+        vista.hayCancion();
     }
 
     private void setUp() throws IOException, URISyntaxException, InvalidClusterNumberException {
@@ -127,5 +134,6 @@ public class ImplementacionModelo implements CambioModelo, InterrogaModelo {
         scanner.close();
         return names;
     }
+
 }
 

@@ -5,4 +5,5 @@ import java.util.List;
 public interface InterrogaModelo {
     List<String> tituloCanciones();
     int getCancionesGenero() throws LikedItemNotFoundException;
+    String getCancion();
 }
