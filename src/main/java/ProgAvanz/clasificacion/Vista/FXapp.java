@@ -4,6 +4,7 @@ import ProgAvanz.clasificacion.Controlador.Controlador;
 import ProgAvanz.clasificacion.Controlador.ImplementacionControlador;
 import ProgAvanz.clasificacion.Modelo.CambioModelo;
 import ProgAvanz.clasificacion.Modelo.ImplementacionModelo;
+import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import javafx.application.Application;
 import javafx.beans.binding.Bindings;
@@ -104,6 +105,8 @@ public class FXapp extends Application implements InterrogaVista {
                 throw new RuntimeException(e);
             } catch (LikedItemNotFoundException e) {
                 throw new RuntimeException(e);
+            } catch (InvalidClusterNumberException e) {
+                throw new RuntimeException(e);
             }
         });
         cambioPestaña.getChildren().addAll(cambio);
@@ -125,7 +128,9 @@ public class FXapp extends Application implements InterrogaVista {
     public String getCancion() {
         return modelo.getCancion();
     }
-    private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException {
+
+
+    private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException, InvalidClusterNumberException {
         controlador.cambioPestaña();
         VBox general2 = new VBox();
         Label numeroRecomendaciones = new Label("Numero de recomendaciones: ");

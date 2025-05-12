@@ -4,6 +4,7 @@ import ProgAvanz.clasificacion.Modelo.Interfaces.Algorithm;
 import ProgAvanz.clasificacion.Modelo.Interfaces.Distance;
 import ProgAvanz.clasificacion.Modelo.algoritmos.KMeans;
 import ProgAvanz.clasificacion.Modelo.algoritmos.KNN;
+import ProgAvanz.clasificacion.Modelo.excepciones.InvalidClusterNumberException;
 import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.Modelo.herramientas.*;
 import ProgAvanz.clasificacion.Modelo.tablas.Table;
@@ -64,7 +65,7 @@ public class ImplementacionModelo implements CambioModelo {
 
     }
     @Override
-    public void cambioPestaña() throws IOException, URISyntaxException {
+    public void cambioPestaña() throws IOException, URISyntaxException, InvalidClusterNumberException {
         setUp();
     }
 
@@ -83,7 +84,7 @@ public class ImplementacionModelo implements CambioModelo {
         cancion_elegida = cancion;
     }
 
-    private void setUp() throws IOException, URISyntaxException {
+    private void setUp() throws IOException, URISyntaxException, InvalidClusterNumberException {
         recomendaciones = new RecSys(algoritmo);
         if(isKNN){
             setUpKNN();
@@ -92,6 +93,8 @@ public class ImplementacionModelo implements CambioModelo {
             setUpKMeans();
 
         }
+        recomendaciones.train(trainTable);
+        recomendaciones.initialise(dataTable,namesData);
     }
 
     private void setUpKMeans() throws IOException, URISyntaxException {
@@ -111,7 +114,7 @@ public class ImplementacionModelo implements CambioModelo {
     }
 
     private List<String> readNames(String fileOfItemNames) throws IOException, URISyntaxException {
-        String path = getClass().getClassLoader().getResource(fileOfItemNames).toURI().getPath();
+        String path = getClass().getClassLoader().getResource(fileOfItemNames).getPath();
 
         List<String> names = new ArrayList<>();
         Scanner scanner = new Scanner(new File(path));
