@@ -17,4 +17,5 @@ public interface CambioModelo {
     List<String> tituloCanciones();
     void setCancion(String cancion);
     String getCancion();
+    int getCancionesGenero() throws LikedItemNotFoundException;
 }

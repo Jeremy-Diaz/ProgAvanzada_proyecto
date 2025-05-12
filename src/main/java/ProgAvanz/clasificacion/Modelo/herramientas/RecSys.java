@@ -36,10 +36,6 @@ public class RecSys {
         for (Row fila: testData.getRows()){
             int clase =algoritmo.estimate(fila.getData());
             etiquetas.add(clase);
-            /*if(!rows_clase.containsKey(clase))
-                rows_clase.put(clase,new LinkedList<>());
-            rows_clase.get(clase).add(fila);
-            */
         }
         nombres_de_item = testItemNames;
         tabla = testData;
@@ -53,27 +49,30 @@ public class RecSys {
             Row fila_item_liked = tabla.getRowAt(indice_item_liked);
             for (int i = 0; i< etiquetas.size();i++){
                 if(lista.size() < numRecomendations ){
-                    if (etiquetas.get(indice_item_liked) == etiquetas.get(i) && tabla.getRowAt(indice_item_liked) != tabla.getRowAt(i)) {
+                    if (Objects.equals(etiquetas.get(indice_item_liked), etiquetas.get(i)) && !nameLikedItem.equals(nombres_de_item.get(i)) && !lista.contains(nombres_de_item.get(i))) {
                         lista.add(nombres_de_item.get(i));
                     }
                 }
             }
         }
         return lista;
-
-            /*Row fila_item_liked = tabla.getRowAt(indice_item_liked);
-            int clase = algoritmo.estimate(fila_item_liked.getData());// es necesario y eficiente?
-            List<Row> lista_clase = rows_clase.get(clase);
-            for( int i = 0; i < lista_clase.size(); i++) {
-                String nombre_a_meter= nombres_de_item.get(tabla.getIndexOfRow(rows_clase.get(clase).get(i)));
-                if (!nombre_a_meter.equals(nameLikedItem))
-                    lista.add(nombre_a_meter); // eficiente?
-                if (lista.size() == numRecomendations)
-                    break;
-            }
-             */
     }
 
+    public int contadorLikedSong(String nameLikedItem) throws LikedItemNotFoundException {
+        if (!nombres_de_item.contains(nameLikedItem))
+            throw new LikedItemNotFoundException(nameLikedItem);
+        int contador= 0;
+        int indice_item_liked = getIndexOf(nameLikedItem);
+        if (indice_item_liked != -1){
+            Row fila_item_liked = tabla.getRowAt(indice_item_liked);
+            for (int i = 0; i< etiquetas.size();i++){
+                if (etiquetas.get(indice_item_liked) == etiquetas.get(i) && !nameLikedItem.equals(nombres_de_item.get(i))) {
+                    contador++;
+                }
+            }
+        }
+        return contador;
+    }
 
     public int getIndexOf(String name){
         for (int i = 0; i < nombres_de_item.size(); i++){

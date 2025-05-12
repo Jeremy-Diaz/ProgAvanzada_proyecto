@@ -9,6 +9,7 @@ import ProgAvanz.clasificacion.Modelo.excepciones.LikedItemNotFoundException;
 import ProgAvanz.clasificacion.Modelo.herramientas.*;
 import ProgAvanz.clasificacion.Modelo.tablas.Table;
 import ProgAvanz.clasificacion.Modelo.tablas.TableWithLabels;
+import ProgAvanz.clasificacion.Vista.InterrogaModelo;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ImplementacionModelo implements CambioModelo {
+public class ImplementacionModelo implements CambioModelo, InterrogaModelo {
 
     private Algorithm algoritmo = null;
     private Distance tipo_distancia = null;
@@ -61,7 +62,7 @@ public class ImplementacionModelo implements CambioModelo {
     }
     @Override
     public List<String> recommend( int nrecomendaciones) throws IOException, URISyntaxException, LikedItemNotFoundException {
-        return recomendaciones.recommend(cancion_elegida, nrecomendaciones );
+        return recomendaciones.recommend(cancion_elegida, nrecomendaciones);
 
     }
     @Override
@@ -78,6 +79,8 @@ public class ImplementacionModelo implements CambioModelo {
     public String getCancion() {
         return cancion_elegida;
     }
+
+    public int getCancionesGenero() throws LikedItemNotFoundException {return recomendaciones.contadorLikedSong(cancion_elegida);}
 
     @Override
     public void setCancion(String cancion) {

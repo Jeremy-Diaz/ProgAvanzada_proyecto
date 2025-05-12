@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.scene.control.*;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
@@ -20,7 +21,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-public class FXapp extends Application implements InterrogaVista {
+public class FXapp extends Application implements InterrogaVista, InterrogaModelo {
     private CambioModelo modelo = new ImplementacionModelo();
     private Controlador controlador = new ImplementacionControlador(modelo,this);
     public FXapp() throws IOException, URISyntaxException {
@@ -77,14 +78,21 @@ public class FXapp extends Application implements InterrogaVista {
 
         Label titulos_canciones  =new Label("Titulos de canciones");
         ObservableList<String> canciones = FXCollections.observableArrayList(tituloCanciones());
+        //busqueda
+        FilteredList<String> lista_filtrada = new FilteredList<>(canciones, s -> true);
         ListView<String> lista = new ListView<>(canciones);
 
+        TextField buscador = new TextField();
+        buscador.setPromptText("Buscar una canción...");
+        buscador.textProperty().addListener((item, valorInicial, valorActual) -> {
+            lista_filtrada.setPredicate(item -> );
+        });
         lista.getSelectionModel().selectedItemProperty().addListener((item,valorInicial,valorActual) -> {
             controlador.setCancion(valorActual);
         });
 
-        bloque_canciones.getChildren().addAll(titulos_canciones,lista);
 
+        bloque_canciones.getChildren().addAll(titulos_canciones,lista);
         // boton aplicar y boton cambio de pagina
 
         HBox cambioPestaña = new HBox();
@@ -129,26 +137,42 @@ public class FXapp extends Application implements InterrogaVista {
         return modelo.getCancion();
     }
 
+    @Override
+    public int getCancionesGenero() throws LikedItemNotFoundException {return modelo.getCancionesGenero();}
+
 
     private void nuevaVentana() throws IOException, URISyntaxException, LikedItemNotFoundException, InvalidClusterNumberException {
         controlador.cambioPestaña();
         VBox general2 = new VBox();
         Label numeroRecomendaciones = new Label("Numero de recomendaciones: ");
-        Spinner<Integer> numero = new Spinner<>(1,tituloCanciones().size(),1);
 
-        HBox recomendaciones = new HBox(numeroRecomendaciones,numero);
-        general2.getChildren().addAll(recomendaciones);
 
         VBox bloque_canciones = new VBox();
+        ObservableList<String> todasCanciones = FXCollections.observableArrayList(controlador.recommend(getCancionesGenero()));
+        System.out.println(todasCanciones.toString());
+
+        Spinner<Integer> numero = new Spinner<>(1,todasCanciones.size(),1);
+        HBox recomendaciones = new HBox(numeroRecomendaciones,numero);
+
 
         Label titulos_canciones  =new Label("Lista de canciones parecidas a "+ getCancion()+": ");
-        ObservableList<String> canciones = FXCollections.observableArrayList(controlador.recommend(numero.getValue()));
-        ListView<String> lista = new ListView<>(canciones);
+        ObservableList<String> cancionesVisibles = FXCollections.observableArrayList();
+        ListView<String> lista = new ListView<>(cancionesVisibles);
+        numero.valueProperty().addListener((obs, anterior, nuevo) -> actualizarLista(nuevo, cancionesVisibles, todasCanciones ));
+        actualizarLista(numero.getValue(), cancionesVisibles, todasCanciones);
+        bloque_canciones.getChildren().addAll(titulos_canciones,lista);
 
-
+        general2.getChildren().addAll(recomendaciones, bloque_canciones);
         Scene nueva = new Scene(general2,400,400);
         Stage nuevo = new Stage();
         nuevo.setScene(nueva);
         nuevo.show();
     }
+
+    private void actualizarLista(int num, ObservableList<String> cancionesVisibles, ObservableList<String> todasCanciones){
+        cancionesVisibles.setAll(todasCanciones.subList(0, Math.min(num, todasCanciones.size())));
+
+    }
+
 }
+
